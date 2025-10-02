@@ -1,32 +1,44 @@
-# Laravel12Argon - Proyecto Base
+# TycomSys - Modernizado
 
-## 🚀 Proyecto Base: Laravel 12 + Argon Dashboard React
+## 🚀 Proyecto: Modernización de TycomSys con Laravel 12 + Argon Dashboard React
 
-Este es un proyecto base que combina **Laravel 12** como backend con **Argon Dashboard React** como frontend, configurado y listo para usar como punto de partida para nuevos proyectos.
+Este proyecto moderniza la página web de **TycomSys** y implementa un sistema completo de gestión de reparaciones, utilizando **Laravel 12** como backend y **Argon Dashboard React** como frontend.
 
-## ✨ Características Incluidas
+## ✨ Características del Proyecto
 
+### 🏢 **Sobre TycomSys**
+- **Empresa:** TycomSys - Soluciones Informáticas
+- **Especialización:** Gestión Documental (AQuarius Software) y Soluciones Tecnológicas
+- **Experiencia:** 25+ años en el mercado
+- **Ubicación:** Santo Domingo, República Dominicana
+
+### 🛠️ **Características Técnicas**
 - ✅ **Laravel 12** - Framework PHP más reciente
 - ✅ **Argon Dashboard React** - Dashboard moderno y responsive
 - ✅ **Integración completa** - Backend y frontend funcionando juntos
 - ✅ **Scripts de desarrollo** - Para ejecutar ambos entornos simultáneamente
 - ✅ **API endpoints** - Laravel API configurada
 - ✅ **Middleware personalizado** - Para servir archivos estáticos
-- ✅ **Configuración optimizada** - Lista para desarrollo y producción
+- ✅ **Sistema de reparaciones** - Gestión completa de equipos
 
 ## 📁 Estructura del Proyecto
 
 ```
-Laravel12Argon/
+TycomSys-Modernizado/
 ├── app/                          # Laravel backend
 │   ├── Http/
 │   │   ├── Controllers/
-│   │   │   └── ReactController.php    # Controlador para servir React
+│   │   │   ├── ReactController.php    # Controlador para servir React
+│   │   │   ├── RepairController.php   # Gestión de reparaciones
+│   │   │   └── EquipmentController.php # Gestión de equipos
 │   │   └── Middleware/
 │   │       └── StaticFilesMiddleware.php  # Middleware para archivos estáticos
 │   └── ...
 ├── frontend/                     # React frontend (Argon Dashboard)
 │   ├── src/                     # Código fuente de React
+│   │   ├── components/          # Componentes personalizados
+│   │   ├── pages/              # Páginas específicas de TycomSys
+│   │   └── services/           # Servicios para reparaciones
 │   ├── public/                  # Archivos públicos de React
 │   ├── build/                   # Build de producción de React
 │   └── package.json
@@ -43,8 +55,8 @@ Laravel12Argon/
 
 ### 1. Clonar el Repositorio
 ```bash
-git clone https://github.com/tu-usuario/Laravel12Argon.git
-cd Laravel12Argon
+git clone https://github.com/wailanbrea/TycomSys-Modernizado.git
+cd TycomSys-Modernizado
 ```
 
 ### 2. Instalar Dependencias
@@ -108,20 +120,39 @@ npm run build
 - **API Health Check:** http://localhost:8000/api/health
 - **React Dev Server:** http://localhost:3000 (en modo desarrollo)
 
-## 📱 Páginas Disponibles
+## 🎯 Funcionalidades de TycomSys
 
-### Frontend (React)
-- `/` - Dashboard principal
-- `/admin/icons` - Página de iconos
-- `/admin/tables` - Página de tablas
-- `/admin/maps` - Página de mapas
-- `/auth/login` - Página de login
-- `/auth/register` - Página de registro
-- `/admin/user-profile` - Perfil de usuario
+### 🌐 **Página Web Modernizada**
+- **Hero Section** con animaciones y diseño moderno
+- **Servicios** - Gestión Documental y Soluciones Tecnológicas
+- **Clientes** - Portfolio de clientes destacados
+- **Sistema de Reparaciones** - Formulario y seguimiento
+- **Contacto** - Información y formulario de contacto
 
-### Backend (Laravel API)
+### 🔧 **Sistema de Gestión de Reparaciones**
+- **Formulario de Solicitud** - Para clientes que necesiten reparación
+- **Dashboard de Administración** - Gestión completa de reparaciones
+- **Seguimiento en Tiempo Real** - Estado actualizado de cada reparación
+- **Notificaciones** - Email y SMS para actualizaciones
+- **Portal del Cliente** - Consulta de estado de reparaciones
+
+### 📱 Páginas Disponibles
+
+#### Frontend (React)
+- `/` - Página principal de TycomSys
+- `/servicios` - Servicios de la empresa
+- `/clientes` - Portfolio de clientes
+- `/reparaciones` - Sistema de reparaciones
+- `/contacto` - Información de contacto
+- `/admin/dashboard` - Dashboard de administración
+- `/admin/repairs` - Gestión de reparaciones
+- `/admin/customers` - Gestión de clientes
+
+#### Backend (Laravel API)
 - `/api/health` - Health check
-- Agregar más endpoints según necesidades
+- `/api/repairs` - API de reparaciones
+- `/api/equipment` - API de equipos
+- `/api/customers` - API de clientes
 
 ## 🔧 Personalización
 
