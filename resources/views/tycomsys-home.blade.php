@@ -45,6 +45,213 @@
         text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
     }
     
+    /* Efectos de texto para el hero */
+    .text-gradient {
+        background: linear-gradient(135deg, #ffffff 0%, #47b2e4 50%, #175acf 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradient-shift 3s ease-in-out infinite alternate;
+    }
+    
+    .text-glow {
+        text-shadow: 
+            0 0 10px rgba(71, 178, 228, 0.8),
+            0 0 20px rgba(71, 178, 228, 0.6),
+            0 0 30px rgba(71, 178, 228, 0.4),
+            0 0 40px rgba(71, 178, 228, 0.2);
+        animation: glow-pulse 2s ease-in-out infinite alternate;
+    }
+    
+    .text-typewriter {
+        overflow: hidden;
+        border-right: 3px solid #47b2e4;
+        white-space: nowrap;
+        animation: typewriter 3s steps(40, end), blink-caret 0.75s step-end infinite;
+    }
+    
+    .text-fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fade-in-up 1s ease-out forwards;
+    }
+    
+    .text-slide-in-left {
+        opacity: 0;
+        transform: translateX(-50px);
+        animation: slide-in-left 1s ease-out 0.5s forwards;
+    }
+    
+    .text-slide-in-right {
+        opacity: 0;
+        transform: translateX(50px);
+        animation: slide-in-right 1s ease-out 0.8s forwards;
+    }
+    
+    .text-bounce {
+        animation: bounce-in 1.2s ease-out;
+    }
+    
+    .text-rotate {
+        animation: rotate-in 1s ease-out;
+    }
+    
+    .text-scale {
+        animation: scale-in 1s ease-out;
+    }
+    
+    .text-flip {
+        animation: flip-in 1.2s ease-out;
+    }
+    
+    /* Animaciones de keyframes */
+    @keyframes gradient-shift {
+        0% {
+            background: linear-gradient(135deg, #ffffff 0%, #47b2e4 50%, #175acf 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        100% {
+            background: linear-gradient(135deg, #175acf 0%, #47b2e4 50%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    
+    @keyframes glow-pulse {
+        0% {
+            text-shadow: 
+                0 0 10px rgba(71, 178, 228, 0.8),
+                0 0 20px rgba(71, 178, 228, 0.6),
+                0 0 30px rgba(71, 178, 228, 0.4),
+                0 0 40px rgba(71, 178, 228, 0.2);
+        }
+        100% {
+            text-shadow: 
+                0 0 20px rgba(71, 178, 228, 1),
+                0 0 30px rgba(71, 178, 228, 0.8),
+                0 0 40px rgba(71, 178, 228, 0.6),
+                0 0 50px rgba(71, 178, 228, 0.4);
+        }
+    }
+    
+    @keyframes typewriter {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+    
+    @keyframes blink-caret {
+        from, to { border-color: transparent; }
+        50% { border-color: #47b2e4; }
+    }
+    
+    @keyframes fade-in-up {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes slide-in-left {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    @keyframes slide-in-right {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    @keyframes bounce-in {
+        0% {
+            transform: scale(0.3) translateY(-100px);
+            opacity: 0;
+        }
+        50% {
+            transform: scale(1.05) translateY(0);
+        }
+        70% {
+            transform: scale(0.9);
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes rotate-in {
+        0% {
+            transform: rotate(-180deg) scale(0);
+            opacity: 0;
+        }
+        100% {
+            transform: rotate(0deg) scale(1);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes scale-in {
+        0% {
+            transform: scale(0);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes flip-in {
+        0% {
+            transform: perspective(400px) rotateY(90deg);
+            opacity: 0;
+        }
+        40% {
+            transform: perspective(400px) rotateY(-20deg);
+        }
+        60% {
+            transform: perspective(400px) rotateY(10deg);
+        }
+        80% {
+            transform: perspective(400px) rotateY(-5deg);
+        }
+        100% {
+            transform: perspective(400px) rotateY(0deg);
+            opacity: 1;
+        }
+    }
+    
+    /* Efectos de hover para botones */
+    .btn-glow {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .btn-glow:hover {
+        box-shadow: 0 0 20px rgba(71, 178, 228, 0.6);
+        transform: translateY(-2px);
+    }
+    
+    .btn-glow::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: left 0.5s;
+    }
+    
+    .btn-glow:hover::before {
+        left: 100%;
+    }
+    
     /* Animación de scroll infinito */
     @keyframes scroll {
         0% {
@@ -148,15 +355,18 @@
 <div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
 <div class="min-h-[60vh] md:min-h-[70vh] flex flex-col items-center justify-center py-24 text-white text-center">
 <div class="max-w-4xl space-y-8">
-<h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white text-shadow leading-tight">
-<span class="block">Soluciones Informáticas</span>
-<span class="block text-secondary">a su Servicio</span>
+<h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+<span class="block text-gradient text-glow">Soluciones Informáticas</span>
+<span class="block text-secondary text-slide-in-right">a su Servicio</span>
 </h1>
-<div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
-<button class="bg-white text-primary text-base font-semibold h-12 px-8 rounded-lg hover:bg-gray-100 transition-colors" onclick="window.location.href='#services'">
+<p class="text-lg md:text-xl text-white/90 mt-6 text-fade-in" style="animation-delay: 1s;">
+<span class="text-typewriter inline-block">Especialistas en tecnología y gestión documental</span>
+</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 text-fade-in" style="animation-delay: 1.2s;">
+<button class="bg-white text-primary text-base font-semibold h-12 px-8 rounded-lg btn-glow" onclick="window.location.href='#services'">
                             Nuestros Servicios
                         </button>
-<button class="bg-secondary text-white text-base font-semibold h-12 px-8 rounded-lg hover:bg-blue-600 transition-colors" onclick="window.location.href='#repair'">
+<button class="bg-secondary text-white text-base font-semibold h-12 px-8 rounded-lg btn-glow" onclick="window.location.href='#repair'">
                             Consultar Reparación
                         </button>
 </div>
