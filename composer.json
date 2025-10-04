@@ -88,6 +88,11 @@
             "php-http/discovery": true
         }
     },
+    "extra": {
+        "heroku": {
+            "document-root": "public"
+        }
+    },
     "minimum-stability": "stable",
     "prefer-stable": true,
     "repositories": {

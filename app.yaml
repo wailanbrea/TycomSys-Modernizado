@@ -1,0 +1,10 @@
+runtime: php82
+env: flex
+
+env_variables:
+  APP_ENV: production
+  APP_DEBUG: false
+
+handlers:
+  - url: /
+    script: public/index.php

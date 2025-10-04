@@ -1,0 +1,6 @@
+{
+    "document_root": "public",
+    "web_server": "nginx",
+    "php_version": "8.2",
+    "buildpack": "heroku/php"
+}
