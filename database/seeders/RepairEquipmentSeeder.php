@@ -17,16 +17,16 @@ class RepairEquipmentSeeder extends Seeder
      */
     public function run(): void
     {
-        // Obtener datos de equipos existentes
-        $dell = EquipmentBrand::where('name', 'Dell')->first();
-        $hp = EquipmentBrand::where('name', 'HP')->first();
-        $lenovo = EquipmentBrand::where('name', 'Lenovo')->first();
-        $asus = EquipmentBrand::where('name', 'Asus')->first();
-        $canon = EquipmentBrand::where('name', 'Canon')->first();
+        // Obtener datos de equipos existentes (usando nombres en minúsculas)
+        $dell = EquipmentBrand::where('name', 'dell')->first();
+        $hp = EquipmentBrand::where('name', 'hp')->first();
+        $lenovo = EquipmentBrand::where('name', 'lenovo')->first();
+        $asus = EquipmentBrand::where('name', 'asus')->first();
+        $canon = EquipmentBrand::where('name', 'canon')->first();
 
-        $laptop = EquipmentType::where('name', 'Laptop')->first();
-        $desktop = EquipmentType::where('name', 'Desktop')->first();
-        $impresora = EquipmentType::where('name', 'Impresora')->first();
+        $laptop = EquipmentType::where('name', 'laptop')->first();
+        $desktop = EquipmentType::where('name', 'desktop')->first();
+        $monitor = EquipmentType::where('name', 'monitor')->first(); // Usar monitor en lugar de impresora
 
         $dellInspiron = EquipmentModel::where('name', 'Inspiron 15 3000')->first();
         $hpPavilion = EquipmentModel::where('name', 'Pavilion Desktop TP01')->first();
@@ -38,6 +38,22 @@ class RepairEquipmentSeeder extends Seeder
         $tecnico1 = User::where('email', 'carlos.mendoza@ticomsys.com')->first();
         $tecnico2 = User::where('email', 'ana.rodriguez@ticomsys.com')->first();
         $admin = User::where('email', 'admin@ticomsys.com')->first();
+
+        // Verificar que todos los datos necesarios existen
+        if (!$dell || !$hp || !$lenovo || !$asus || !$canon) {
+            $this->command->error('No se encontraron las marcas necesarias. Ejecuta primero EquipmentDataSeeder.');
+            return;
+        }
+
+        if (!$laptop || !$desktop || !$monitor) {
+            $this->command->error('No se encontraron los tipos de equipos necesarios. Ejecuta primero EquipmentDataSeeder.');
+            return;
+        }
+
+        if (!$tecnico1 || !$tecnico2 || !$admin) {
+            $this->command->error('No se encontraron los técnicos necesarios. Ejecuta primero TechnicianSeeder.');
+            return;
+        }
 
         $equipments = [
             [
@@ -117,7 +133,7 @@ class RepairEquipmentSeeder extends Seeder
                 'assigned_technician_id' => $tecnico1->id,
                 'status' => 'ready',
                 'brand_id' => $canon->id,
-                'type_id' => $impresora->id,
+                'type_id' => $monitor->id, // Usar monitor como tipo para impresoras
                 'model_id' => $canonPixma->id,
             ],
             [
