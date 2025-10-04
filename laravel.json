@@ -1,0 +1,5 @@
+{
+    "web": {
+        "document_root": "public"
+    }
+}

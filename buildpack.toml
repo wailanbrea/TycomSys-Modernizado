@@ -1,0 +1,6 @@
+[[buildpack]]
+id = "heroku/php"
+version = "0.0.0"
+
+[buildpack.config]
+document_root = "public"
