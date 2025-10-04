@@ -3,11 +3,10 @@
 # Database Setup Script for Laravel Cloud
 # This script sets up SQLite database and runs migrations and seeders
 
-echo "🗄️ Setting up SQLite database for Laravel Cloud..."
+echo "🗄️ Setting up PostgreSQL database for Laravel Cloud..."
 
-# Create SQLite database file
-echo "📁 Creating SQLite database file..."
-touch /tmp/ticomsys_modernizado.sqlite
+# Database connection will be handled by PostgreSQL
+echo "📁 Using PostgreSQL database from Laravel Cloud..."
 
 # Run migrations
 echo "🔄 Running database migrations..."

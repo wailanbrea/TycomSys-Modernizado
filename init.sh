@@ -20,10 +20,8 @@ else
     echo "⚠️ No environment file found, using default"
 fi
 
-# Create SQLite database
-echo "🗄️ Creating SQLite database..."
-touch /tmp/ticomsys_modernizado.sqlite
-chmod 666 /tmp/ticomsys_modernizado.sqlite
+# Database connection will be handled by PostgreSQL
+echo "🗄️ Using PostgreSQL database from Laravel Cloud..."
 
 # Generate application key
 echo "🔑 Generating application key..."

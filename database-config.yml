@@ -2,8 +2,12 @@
 # This file defines the database configuration for Laravel Cloud deployment
 
 database:
-  type: "sqlite"
-  database: "/tmp/ticomsys_modernizado.sqlite"
+  type: "pgsql"
+  host: "ep-crimson-bird-a46hyy47.aws-us-east-1.pg.laravel.cloud"
+  port: "5432"
+  database: "main"
+  username: "laravel"
+  password: "npg_DWalwCmzK7t5"
   
   # Laravel Cloud specific settings
   laravel_cloud:

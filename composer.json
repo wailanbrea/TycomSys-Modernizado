@@ -58,12 +58,11 @@
             "@php artisan config:clear --ansi",
             "@php artisan test"
         ],
-        "post-install-cmd": [
-            "cp laravel-cloud-env.txt .env",
-            "touch /tmp/ticomsys_modernizado.sqlite",
-            "@php artisan key:generate --force",
-            "@php artisan config:cache"
-        ],
+    "post-install-cmd": [
+        "cp laravel-cloud-env.txt .env",
+        "@php artisan key:generate --force",
+        "@php artisan config:cache"
+    ],
         "deploy": [
             "@php artisan migrate --force",
             "@php artisan db:seed --force",
