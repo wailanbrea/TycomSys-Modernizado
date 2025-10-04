@@ -1,0 +1,34 @@
+# Database Configuration for Laravel Cloud
+# This file defines the database configuration for Laravel Cloud deployment
+
+database:
+  type: "mysql"
+  version: "8.0"
+  host: "${DB_HOST}"
+  port: "${DB_PORT:-3306}"
+  database: "${DB_DATABASE}"
+  username: "${DB_USERNAME}"
+  password: "${DB_PASSWORD}"
+  
+  # Laravel Cloud specific settings
+  laravel_cloud:
+    auto_migrate: true
+    auto_seed: true
+    backup_enabled: true
+    
+  # Connection settings
+  connection:
+    charset: "utf8mb4"
+    collation: "utf8mb4_unicode_ci"
+    strict: true
+    engine: "InnoDB"
+    
+  # Migration settings
+  migrations:
+    table: "migrations"
+    batch: 1
+    
+  # Seeder settings
+  seeders:
+    enabled: true
+    force: true
