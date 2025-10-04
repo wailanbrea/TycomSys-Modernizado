@@ -2,7 +2,7 @@
   "name": "ticomsys-modernizado",
   "description": "TICOMSYS - Sistema de Gestión de Reparaciones",
   "document_root": "public",
-  "web_server": "nginx",
+  "web_server": "apache",
   "php_version": "8.2",
   "buildpack": "heroku/php",
   "environment": {

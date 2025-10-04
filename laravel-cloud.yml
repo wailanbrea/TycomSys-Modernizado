@@ -10,11 +10,11 @@ app:
 environment:
   php_version: "8.2"
   document_root: "public"
-  web_server: "nginx"
+  web_server: "apache"
   
 # Web Server Configuration
 web_server:
-  type: "nginx"
+  type: "apache"
   document_root: "public"
   
 # Environment Variables

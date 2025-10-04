@@ -4,5 +4,5 @@ version = "0.0.0"
 
 [buildpack.config]
 document_root = "public"
-web_server = "nginx"
+web_server = "apache"
 php_version = "8.2"

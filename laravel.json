@@ -1,6 +1,7 @@
 {
   "web": {
-    "document_root": "public"
+    "document_root": "public",
+    "web_server": "apache"
   },
   "buildpacks": [
     {
