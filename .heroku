@@ -1,0 +1,2 @@
+[buildpacks]
+urls = ["https://github.com/heroku/heroku-buildpack-php"]
