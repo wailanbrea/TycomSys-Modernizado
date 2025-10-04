@@ -32,6 +32,13 @@ echo "🔐 Setting file permissions..."
 chmod -R 755 storage bootstrap/cache
 chmod -R 755 public
 
+# Build frontend assets
+echo "🎨 Building frontend assets..."
+cd /var/www/html/frontend
+npm install
+npm run build
+cd /var/www/html
+
 # Clear and cache configuration
 echo "⚡ Optimizing application..."
 php artisan config:clear

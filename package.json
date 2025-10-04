@@ -1,24 +1,16 @@
 {
-  "name": "laravel-argon-dashboard",
+  "name": "ticomsys-modernizado",
   "version": "1.0.0",
-  "description": "Laravel 12 + Argon Dashboard React",
+  "description": "TICOMSYS - Sistema de Gestión de Reparaciones",
   "scripts": {
-    "dev": "concurrently \"php artisan serve\" \"cd frontend && npm start\"",
-    "build": "cd frontend && npm run build",
-    "install-deps": "cd frontend && npm install",
-    "start": "php artisan serve",
-    "frontend": "cd frontend && npm start",
-    "test": "cd frontend && npm test"
+    "build": "cd frontend && npm install && npm run build",
+    "dev": "cd frontend && npm install && npm start"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
-  },
-  "keywords": [
-    "laravel",
-    "react",
-    "argon-dashboard",
-    "dashboard"
-  ],
-  "author": "Ticomsys",
-  "license": "MIT"
+    "concurrently": "^7.6.0"
+  }
 }
