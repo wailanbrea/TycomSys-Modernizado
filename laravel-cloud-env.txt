@@ -1,10 +1,11 @@
-APP_NAME="TICOMSYS"
+APP_NAME="Ticomsys-Modernizado"
 APP_ENV=production
-APP_KEY=base64:hUsr90G96/hG75Q3GfI+IW55vyt4PhgM2+SUMS+e38Q=
+APP_KEY=base64:PfJiwGJ8YDmxKK8nE1H9JKTvOBJ0tkdwk3C027quLQw=
 APP_DEBUG=false
-APP_URL=https://tycomsys-modernizado-main-xaiitl.laravel.cloud
+APP_URL="https://ticomsys-modernizado-main-oawkq1.laravel.cloud"
 
-LOG_CHANNEL=stack
+LOG_CHANNEL=laravel-cloud-socket
+LOG_STDERR_FORMATTER=Monolog\Formatter\JsonFormatter
 LOG_DEPRECATIONS_CHANNEL=null
 LOG_LEVEL=debug
 
@@ -15,10 +16,13 @@ DB_DATABASE=main
 DB_USERNAME=laravel
 DB_PASSWORD=npg_DWalwCmzK7t5
 
+SESSION_DRIVER=cookie
+CACHE_STORE=database
+SCHEDULE_CACHE_DRIVER=database
 BROADCAST_DRIVER=log
-CACHE_DRIVER=file
 FILESYSTEM_DISK=local
 QUEUE_CONNECTION=sync
+VITE_APP_NAME="${APP_NAME}"
 SESSION_DRIVER=file
 SESSION_LIFETIME=120
 
