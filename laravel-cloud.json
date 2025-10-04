@@ -23,7 +23,7 @@
     "SESSION_DRIVER": "cookie",
     "CACHE_STORE": "database",
     "SCHEDULE_CACHE_DRIVER": "database",
-    "VITE_APP_NAME": "${APP_NAME}",
+    "VITE_APP_NAME": "Ticomsys-Modernizado",
     "QUEUE_CONNECTION": "sync",
     "FILESYSTEM_DISK": "local",
     "BROADCAST_DRIVER": "log",
@@ -37,10 +37,9 @@
     "MAIL_FROM_ADDRESS": "hello@example.com",
     "MAIL_FROM_NAME": "TICOMSYS"
   },
-  "addons": [
+  "buildpacks": [
     {
-      "plan": "heroku-postgresql:mini",
-      "as": "DATABASE"
+      "url": "https://github.com/heroku/heroku-buildpack-php"
     }
   ],
   "scripts": {
@@ -51,10 +50,5 @@
       "php artisan route:cache",
       "php artisan view:cache"
     ]
-  },
-  "buildpacks": [
-    {
-      "url": "https://github.com/heroku/heroku-buildpack-php"
-    }
-  ]
+  }
 }

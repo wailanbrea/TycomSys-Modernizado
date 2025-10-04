@@ -1,10 +1,24 @@
 runtime: php82
-env: flex
-
 env_variables:
-  APP_ENV: production
-  APP_DEBUG: false
+  APP_NAME: "Ticomsys-Modernizado"
+  APP_ENV: "production"
+  APP_KEY: "base64:PfJiwGJ8YDmxKK8nE1H9JKTvOBJ0tkdwk3C027quLQw="
+  APP_DEBUG: "false"
+  APP_URL: "https://ticomsys-modernizado-main-oawkq1.laravel.cloud"
+  LOG_CHANNEL: "laravel-cloud-socket"
+  LOG_STDERR_FORMATTER: "Monolog\\Formatter\\JsonFormatter"
+  DB_CONNECTION: "pgsql"
+  DB_HOST: "ep-crimson-bird-a46hyy47.aws-us-east-1.pg.laravel.cloud"
+  DB_PORT: "5432"
+  DB_DATABASE: "main"
+  DB_USERNAME: "laravel"
+  DB_PASSWORD: "npg_DWalwCmzK7t5"
+  SESSION_DRIVER: "cookie"
+  CACHE_STORE: "database"
+  SCHEDULE_CACHE_DRIVER: "database"
+  VITE_APP_NAME: "Ticomsys-Modernizado"
 
 handlers:
-  - url: /
-    script: public/index.php
+- url: /.*
+  script: public/index.php
+  secure: always
