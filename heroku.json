@@ -4,15 +4,35 @@
       "url": "https://github.com/heroku/heroku-buildpack-php"
     }
   ],
+  "stack": "heroku-22",
   "formation": {
     "web": {
       "quantity": 1,
       "size": "basic"
     }
   },
-  "addons": [
-    {
-      "plan": "heroku-postgresql:mini"
-    }
-  ]
+  "addons": [],
+  "env": {
+    "APP_ENV": "production",
+    "APP_KEY": "base64:PfJiwGJ8YDmxKK8nE1H9JKTvOBJ0tkdwk3C027quLQw=",
+    "APP_DEBUG": "false",
+    "APP_URL": "https://ticomsys-modernizado-main-oawkq1.laravel.cloud",
+    "DB_CONNECTION": "pgsql",
+    "DB_HOST": "ep-crimson-bird-a46hyy47.aws-us-east-1.pg.laravel.cloud",
+    "DB_PORT": "5432",
+    "DB_DATABASE": "main",
+    "DB_USERNAME": "laravel",
+    "DB_PASSWORD": "npg_DWalwCmzK7t5",
+    "LOG_CHANNEL": "laravel-cloud-socket",
+    "SESSION_DRIVER": "cookie",
+    "CACHE_STORE": "database",
+    "VITE_APP_NAME": "Ticomsys-Modernizado"
+  },
+  "scripts": {
+    "postdeploy": [
+      "php artisan migrate --force",
+      "php artisan db:seed --force",
+      "php artisan config:cache"
+    ]
+  }
 }

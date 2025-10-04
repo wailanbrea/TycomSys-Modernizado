@@ -40,6 +40,15 @@ touch /var/www/html/public/index.php
 chmod 644 /var/www/html/public/index.php
 chmod 755 /var/www/html/public
 
+# Ensure .htaccess exists and is readable
+echo "🔧 Ensuring .htaccess configuration..."
+if [ -f "/var/www/html/public/.htaccess" ]; then
+    chmod 644 /var/www/html/public/.htaccess
+    echo "✅ .htaccess file permissions set"
+else
+    echo "⚠️ .htaccess file not found!"
+fi
+
 # Build frontend assets
 echo "🎨 Building frontend assets..."
 cd /var/www/html/frontend
