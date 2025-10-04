@@ -224,18 +224,28 @@ class RepairEquipmentSeeder extends Seeder
      */
     private function createTicket($equipment, $admin)
     {
+        // Mapear el estado del equipo al estado del ticket
+        $statusMap = [
+            'received' => 'open',
+            'in_review' => 'in_progress',
+            'in_repair' => 'in_progress',
+            'waiting_parts' => 'waiting_parts',
+            'ready' => 'resolved',
+            'delivered' => 'closed'
+        ];
+
         $ticket = Ticket::create([
             'ticket_number' => $equipment->ticket_number,
             'repair_equipment_id' => $equipment->id,
-            'customer_name' => $equipment->customer_name,
-            'customer_phone' => $equipment->customer_phone,
-            'customer_email' => $equipment->customer_email,
-            'problem_description' => $equipment->problem_description,
-            'status' => $equipment->status,
+            'title' => 'Reparación de ' . $equipment->customer_name,
+            'description' => $equipment->problem_description,
+            'priority' => $this->getRandomPriority(),
+            'status' => $statusMap[$equipment->status] ?? 'open',
             'assigned_technician_id' => $equipment->assigned_technician_id,
             'created_by' => $admin->id,
-            'priority' => $this->getRandomPriority(),
-            'estimated_hours' => rand(2, 8),
+            'due_date' => $equipment->estimated_delivery,
+            'resolved_at' => $equipment->status === 'delivered' ? now() : null,
+            'resolution_notes' => $equipment->status === 'delivered' ? 'Equipo entregado al cliente' : null,
         ]);
 
         return $ticket;
@@ -252,16 +262,18 @@ class RepairEquipmentSeeder extends Seeder
         // Crear historial hasta el estado actual
         for ($i = 0; $i <= $currentStatusIndex; $i++) {
             $status = $statuses[$i];
-            $createdAt = $equipment->received_at->copy()->addHours($i * 2);
+            $statusDate = $equipment->received_at->copy()->addHours($i * 2);
             
-            // Insertar directamente en la tabla (asumiendo que existe)
+            // Insertar directamente en la tabla
             \DB::table('equipment_statuses')->insert([
                 'repair_equipment_id' => $equipment->id,
                 'status' => $status,
+                'description' => $this->getStatusDescription($status),
                 'notes' => $this->getStatusNote($status),
-                'created_by' => $equipment->assigned_technician_id,
-                'created_at' => $createdAt,
-                'updated_at' => $createdAt,
+                'updated_by' => $equipment->assigned_technician_id,
+                'status_date' => $statusDate,
+                'created_at' => $statusDate,
+                'updated_at' => $statusDate,
             ]);
         }
     }
@@ -273,6 +285,23 @@ class RepairEquipmentSeeder extends Seeder
     {
         $priorities = ['low', 'medium', 'high', 'urgent'];
         return $priorities[array_rand($priorities)];
+    }
+
+    /**
+     * Obtener descripción según el estado
+     */
+    private function getStatusDescription($status)
+    {
+        $descriptions = [
+            'received' => 'Equipo recibido y registrado en el sistema',
+            'in_review' => 'Equipo en revisión inicial',
+            'in_repair' => 'Reparación en progreso',
+            'waiting_parts' => 'Esperando repuestos',
+            'ready' => 'Equipo reparado y listo para entrega',
+            'delivered' => 'Equipo entregado al cliente',
+        ];
+
+        return $descriptions[$status] ?? 'Estado actualizado';
     }
 
     /**
