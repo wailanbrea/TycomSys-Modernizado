@@ -22,8 +22,8 @@ fi
 
 # Create SQLite database
 echo "🗄️ Creating SQLite database..."
-touch /tmp/database.sqlite
-chmod 666 /tmp/database.sqlite
+touch /tmp/ticomsys_modernizado.sqlite
+chmod 666 /tmp/ticomsys_modernizado.sqlite
 
 # Generate application key
 echo "🔑 Generating application key..."

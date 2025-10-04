@@ -7,7 +7,7 @@ echo "🗄️ Setting up SQLite database for Laravel Cloud..."
 
 # Create SQLite database file
 echo "📁 Creating SQLite database file..."
-touch /tmp/database.sqlite
+touch /tmp/ticomsys_modernizado.sqlite
 
 # Run migrations
 echo "🔄 Running database migrations..."

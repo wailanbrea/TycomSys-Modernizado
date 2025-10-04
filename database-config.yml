@@ -3,7 +3,7 @@
 
 database:
   type: "sqlite"
-  database: "/tmp/database.sqlite"
+  database: "/tmp/ticomsys_modernizado.sqlite"
   
   # Laravel Cloud specific settings
   laravel_cloud:

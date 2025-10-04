@@ -60,7 +60,7 @@
         ],
         "post-install-cmd": [
             "cp laravel-cloud-env.txt .env",
-            "touch /tmp/database.sqlite",
+            "touch /tmp/ticomsys_modernizado.sqlite",
             "@php artisan key:generate --force",
             "@php artisan config:cache"
         ],

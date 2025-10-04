@@ -19,7 +19,7 @@ environments:
       APP_DEBUG: "false"
       APP_URL: "https://tycomsys-modernizado-main-xaiitl.laravel.cloud"
       DB_CONNECTION: "sqlite"
-      DB_DATABASE: "/tmp/database.sqlite"
+      DB_DATABASE: "/tmp/ticomsys_modernizado.sqlite"
       LOG_CHANNEL: "stack"
       LOG_LEVEL: "debug"
       CACHE_DRIVER: "file"
