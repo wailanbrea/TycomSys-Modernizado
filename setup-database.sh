@@ -1,18 +1,13 @@
 #!/bin/bash
 
 # Database Setup Script for Laravel Cloud
-# This script waits for database connection and then runs migrations and seeders
+# This script sets up SQLite database and runs migrations and seeders
 
-echo "🗄️ Setting up database for Laravel Cloud..."
+echo "🗄️ Setting up SQLite database for Laravel Cloud..."
 
-# Wait for database connection
-echo "⏳ Waiting for database connection..."
-until php artisan tinker --execute="DB::connection()->getPdo();" 2>/dev/null; do
-    echo "Database not ready, waiting..."
-    sleep 2
-done
-
-echo "✅ Database connection established!"
+# Create SQLite database file
+echo "📁 Creating SQLite database file..."
+touch /tmp/database.sqlite
 
 # Run migrations
 echo "🔄 Running database migrations..."
@@ -28,4 +23,4 @@ php artisan config:cache
 php artisan route:cache
 php artisan view:cache
 
-echo "✅ Database setup completed successfully!"
+echo "✅ SQLite database setup completed successfully!"
