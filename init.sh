@@ -31,6 +31,14 @@ php artisan key:generate --force
 echo "🔐 Setting file permissions..."
 chmod -R 755 storage bootstrap/cache
 chmod -R 755 public
+chmod -R 755 /var/www/html
+
+# Ensure public directory exists and is accessible
+echo "📁 Ensuring public directory structure..."
+mkdir -p /var/www/html/public
+touch /var/www/html/public/index.php
+chmod 644 /var/www/html/public/index.php
+chmod 755 /var/www/html/public
 
 # Build frontend assets
 echo "🎨 Building frontend assets..."
