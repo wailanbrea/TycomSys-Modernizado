@@ -90,7 +90,8 @@
     },
     "extra": {
         "heroku": {
-            "document-root": "public"
+            "document-root": "public",
+            "web-server": "nginx"
         }
     },
     "minimum-stability": "stable",

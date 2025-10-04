@@ -1,0 +1,35 @@
+# Laravel Cloud Configuration
+# Configuration for Laravel Cloud deployment
+
+# Application Settings
+app:
+  name: "TICOMSYS Modernizado"
+  description: "Sistema de Gestión de Reparaciones TICOMSYS"
+  
+# Environment Settings
+environment:
+  php_version: "8.2"
+  document_root: "public"
+  
+# Build Settings
+build:
+  buildpack: "heroku/php"
+  commands:
+    - "composer install --no-dev --optimize-autoloader"
+    - "php artisan migrate --force"
+    - "php artisan db:seed --force"
+    - "php artisan config:cache"
+    - "php artisan route:cache"
+    - "php artisan view:cache"
+    
+# Web Server Configuration
+web_server:
+  type: "nginx"
+  document_root: "public"
+  
+# Environment Variables
+env_vars:
+  APP_NAME: "TICOMSYS"
+  APP_ENV: "production"
+  APP_DEBUG: "false"
+  APP_URL: "https://tycomsys-modernizado-main-xaiitl.laravel.cloud"

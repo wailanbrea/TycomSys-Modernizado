@@ -1,0 +1,47 @@
+# Laravel Cloud Configuration
+# Based on official documentation: https://cloud.laravel.com/docs/quickstart
+
+name: tycomsys-modernizado
+description: "TICOMSYS - Sistema de Gestión de Reparaciones"
+
+# Environment Configuration
+environments:
+  production:
+    php_version: "8.2"
+    document_root: "public"
+    web_server: "nginx"
+    
+    # Environment Variables
+    env_vars:
+      APP_NAME: "TICOMSYS"
+      APP_ENV: "production"
+      APP_DEBUG: "false"
+      APP_URL: "https://tycomsys-modernizado-main-xaiitl.laravel.cloud"
+      
+    # Database Configuration
+    database:
+      type: "mysql"
+      version: "8.0"
+      
+    # Build Configuration
+    build:
+      buildpack: "heroku/php"
+      commands:
+        - "composer install --no-dev --optimize-autoloader"
+        - "php artisan migrate --force"
+        - "php artisan db:seed --force"
+        - "php artisan config:cache"
+        - "php artisan route:cache"
+        - "php artisan view:cache"
+
+# Deployment Configuration
+deployment:
+  strategy: "git"
+  branch: "main"
+  auto_deploy: true
+  
+# Resource Configuration
+resources:
+  compute:
+    type: "standard"
+    size: "small"
