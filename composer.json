@@ -59,7 +59,7 @@
             "@php artisan test"
         ],
         "post-install-cmd": [
-            "cp laravel-cloud.env .env",
+            "cp laravel-cloud-env.txt .env",
             "@php artisan key:generate --force",
             "@php artisan config:cache"
         ],
