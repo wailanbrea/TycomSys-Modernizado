@@ -28,11 +28,80 @@ import {
   Container,
   Row,
   Col,
+  Badge,
+  Alert,
 } from "reactstrap";
 // core components
 import UserHeader from "components/Headers/UserHeader.js";
+import { useState, useEffect } from "react";
 
 const Profile = () => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    address: '',
+    city: '',
+    country: '',
+    postal_code: '',
+    about: ''
+  });
+
+  useEffect(() => {
+    // Obtener datos del usuario desde window.user
+    if (window.user) {
+      setUser(window.user);
+      setFormData({
+        name: window.user.name || '',
+        email: window.user.email || '',
+        address: '',
+        city: '',
+        country: '',
+        postal_code: '',
+        about: `Usuario del sistema TICOMSYS con rol ${window.user.roles?.[0]?.display_name || 'Sin rol'}`
+      });
+    }
+    setLoading(false);
+  }, []);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Aquí se implementaría la actualización del perfil
+    alert('Perfil actualizado correctamente');
+  };
+
+  if (loading) {
+    return (
+      <Container className="mt--7" fluid>
+        <Row>
+          <Col>
+            <Alert color="info">Cargando perfil...</Alert>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
+
+  if (!user) {
+    return (
+      <Container className="mt--7" fluid>
+        <Row>
+          <Col>
+            <Alert color="danger">No se pudo cargar la información del usuario</Alert>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
   return (
     <>
       <UserHeader />
@@ -97,30 +166,38 @@ const Profile = () => {
                 </Row>
                 <div className="text-center">
                   <h3>
-                    Jessica Jones
-                    <span className="font-weight-light">, 27</span>
+                    {user.name}
+                    <span className="font-weight-light">, ID: {user.id}</span>
                   </h3>
                   <div className="h5 font-weight-300">
-                    <i className="ni location_pin mr-2" />
-                    Bucharest, Romania
+                    <i className="ni ni-email-83 mr-2" />
+                    {user.email}
                   </div>
                   <div className="h5 mt-4">
-                    <i className="ni business_briefcase-24 mr-2" />
-                    Solution Manager - Creative Tim Officer
+                    <i className="ni ni-badge mr-2" />
+                    {user.roles?.map(role => (
+                      <Badge key={role.id} color="primary" className="mr-1">
+                        {role.display_name}
+                      </Badge>
+                    ))}
                   </div>
                   <div>
-                    <i className="ni education_hat mr-2" />
-                    University of Computer Science
+                    <i className="ni ni-key-25 mr-2" />
+                    {user.permissions?.length || 0} permisos asignados
                   </div>
                   <hr className="my-4" />
                   <p>
-                    Ryan — the name taken by Melbourne-raised, Brooklyn-based
-                    Nick Murphy — writes, performs and records all of his own
-                    music.
+                    Usuario del sistema TICOMSYS con acceso completo a las funcionalidades 
+                    según su rol y permisos asignados.
                   </p>
-                  <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                    Show more
-                  </a>
+                  <div className="mt-3">
+                    <Badge color="success" className="mr-1">
+                      {user.is_admin ? 'Administrador' : ''}
+                    </Badge>
+                    <Badge color="info" className="mr-1">
+                      {user.is_tecnico ? 'Técnico' : ''}
+                    </Badge>
+                  </div>
                 </div>
               </CardBody>
             </Card>
@@ -145,9 +222,9 @@ const Profile = () => {
                 </Row>
               </CardHeader>
               <CardBody>
-                <Form>
+                <Form onSubmit={handleSubmit}>
                   <h6 className="heading-small text-muted mb-4">
-                    User information
+                    Información del Usuario
                   </h6>
                   <div className="pl-lg-4">
                     <Row>
@@ -155,15 +232,17 @@ const Profile = () => {
                         <FormGroup>
                           <label
                             className="form-control-label"
-                            htmlFor="input-username"
+                            htmlFor="input-name"
                           >
-                            Username
+                            Nombre Completo
                           </label>
                           <Input
                             className="form-control-alternative"
-                            defaultValue="lucky.jesse"
-                            id="input-username"
-                            placeholder="Username"
+                            value={formData.name}
+                            onChange={handleInputChange}
+                            name="name"
+                            id="input-name"
+                            placeholder="Nombre completo"
                             type="text"
                           />
                         </FormGroup>
@@ -174,50 +253,36 @@ const Profile = () => {
                             className="form-control-label"
                             htmlFor="input-email"
                           >
-                            Email address
+                            Correo Electrónico
                           </label>
                           <Input
                             className="form-control-alternative"
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            name="email"
                             id="input-email"
-                            placeholder="jesse@example.com"
+                            placeholder="correo@ejemplo.com"
                             type="email"
                           />
                         </FormGroup>
                       </Col>
                     </Row>
                     <Row>
-                      <Col lg="6">
+                      <Col lg="12">
                         <FormGroup>
                           <label
                             className="form-control-label"
-                            htmlFor="input-first-name"
+                            htmlFor="input-roles"
                           >
-                            First name
+                            Roles Asignados
                           </label>
-                          <Input
-                            className="form-control-alternative"
-                            defaultValue="Lucky"
-                            id="input-first-name"
-                            placeholder="First name"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-last-name"
-                          >
-                            Last name
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            defaultValue="Jesse"
-                            id="input-last-name"
-                            placeholder="Last name"
-                            type="text"
-                          />
+                          <div className="form-control-alternative" style={{padding: '10px'}}>
+                            {user.roles?.map(role => (
+                              <Badge key={role.id} color="primary" className="mr-2 mb-1">
+                                {role.display_name}
+                              </Badge>
+                            ))}
+                          </div>
                         </FormGroup>
                       </Col>
                     </Row>
@@ -301,20 +366,41 @@ const Profile = () => {
                     </Row>
                   </div>
                   <hr className="my-4" />
-                  {/* Description */}
-                  <h6 className="heading-small text-muted mb-4">About me</h6>
+                  {/* Permissions */}
+                  <h6 className="heading-small text-muted mb-4">Permisos del Usuario</h6>
                   <div className="pl-lg-4">
                     <FormGroup>
-                      <label>About Me</label>
+                      <label>Permisos Asignados</label>
+                      <div className="form-control-alternative" style={{padding: '10px', minHeight: '100px'}}>
+                        {user.permissions?.map(permission => (
+                          <Badge key={permission.id} color="success" className="mr-2 mb-1">
+                            {permission.display_name}
+                          </Badge>
+                        ))}
+                      </div>
+                    </FormGroup>
+                  </div>
+                  <hr className="my-4" />
+                  {/* Description */}
+                  <h6 className="heading-small text-muted mb-4">Acerca de mí</h6>
+                  <div className="pl-lg-4">
+                    <FormGroup>
+                      <label>Descripción</label>
                       <Input
                         className="form-control-alternative"
-                        placeholder="A few words about you ..."
+                        placeholder="Algunas palabras sobre ti..."
                         rows="4"
-                        defaultValue="A beautiful Dashboard for Bootstrap 4. It is Free and
-                        Open Source."
+                        value={formData.about}
+                        onChange={handleInputChange}
+                        name="about"
                         type="textarea"
                       />
                     </FormGroup>
+                  </div>
+                  <div className="text-center">
+                    <Button color="primary" type="submit">
+                      Guardar Cambios
+                    </Button>
                   </div>
                 </Form>
               </CardBody>

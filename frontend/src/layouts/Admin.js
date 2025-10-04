@@ -49,15 +49,15 @@ const Admin = (props) => {
   };
 
   const getBrandText = (path) => {
+    // Obtener la ruta actual sin el prefijo /admin o /tecnico
+    const currentPath = location.pathname.replace(/^\/(admin|tecnico)/, '');
+    
     for (let i = 0; i < routes.length; i++) {
-      if (
-        props?.location?.pathname.indexOf(routes[i].layout + routes[i].path) !==
-        -1
-      ) {
+      if (routes[i].layout === "/admin" && routes[i].path === currentPath) {
         return routes[i].name;
       }
     }
-    return "Brand";
+    return "Dashboard";
   };
 
   return (
@@ -67,14 +67,14 @@ const Admin = (props) => {
         routes={routes}
         logo={{
           innerLink: "/admin/index",
-          imgSrc: require("../assets/img/brand/argon-react.png"),
-          imgAlt: "...",
+          imgSrc: require("../assets/img/brand/ticomsys-logo.png"),
+          imgAlt: "TicomSys",
         }}
       />
       <div className="main-content" ref={mainContent}>
         <AdminNavbar
           {...props}
-          brandText={getBrandText(props?.location?.pathname)}
+          brandText={getBrandText(location.pathname)}
         />
         <Routes>
           {getRoutes(routes)}

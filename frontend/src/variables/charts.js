@@ -15,13 +15,19 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-const Chart = require("chart.js");
+// Obsoleto para Chart.js v3+. Mantener solo si alguna vista legacy lo usa directamente.
+let Chart;
+try {
+  Chart = require("chart.js");
+} catch (e) {
+  Chart = null;
+}
 //
 // Chart extension for making the bars rounded
 // Code from: https://codepen.io/jedtrow/full/ygRYgo
 //
 
-Chart.elements.Rectangle.prototype.draw = function () {
+if (Chart && Chart.elements && Chart.elements.Rectangle) Chart.elements.Rectangle.prototype.draw = function () {
   var ctx = this._chart.ctx;
   var vm = this._view;
   var left, right, top, bottom, signX, signY, borderSkipped, radius;
@@ -256,7 +262,7 @@ function chartOptions() {
   };
 
   // yAxes
-  Chart.scaleService.updateScaleDefaults("linear", {
+  if (Chart && Chart.scaleService) Chart.scaleService.updateScaleDefaults("linear", {
     gridLines: {
       borderDash: [2],
       borderDashOffset: [2],
@@ -281,7 +287,7 @@ function chartOptions() {
   });
 
   // xAxes
-  Chart.scaleService.updateScaleDefaults("category", {
+  if (Chart && Chart.scaleService) Chart.scaleService.updateScaleDefaults("category", {
     gridLines: {
       drawBorder: false,
       drawOnChartArea: false,

@@ -1,13 +1,13 @@
-# TycomSys - Modernizado
+# TICOMSYS - Modernizado
 
-## 🚀 Proyecto: Modernización de TycomSys con Laravel 12 + Argon Dashboard React
+## 🚀 Proyecto: Modernización de TICOMSYS con Laravel 12 + Argon Dashboard React
 
-Este proyecto moderniza la página web de **TycomSys** y implementa un sistema completo de gestión de reparaciones, utilizando **Laravel 12** como backend y **Argon Dashboard React** como frontend.
+Este proyecto moderniza la página web de **TICOMSYS** y implementa un sistema completo de gestión de reparaciones, utilizando **Laravel 12** como backend y **Argon Dashboard React** como frontend.
 
 ## ✨ Características del Proyecto
 
-### 🏢 **Sobre TycomSys**
-- **Empresa:** TycomSys - Soluciones Informáticas
+### 🏢 **Sobre TICOMSYS**
+- **Empresa:** TICOMSYS - Soluciones Informáticas
 - **Especialización:** Gestión Documental (AQuarius Software) y Soluciones Tecnológicas
 - **Experiencia:** 25+ años en el mercado
 - **Ubicación:** Santo Domingo, República Dominicana
@@ -24,7 +24,7 @@ Este proyecto moderniza la página web de **TycomSys** y implementa un sistema c
 ## 📁 Estructura del Proyecto
 
 ```
-TycomSys-Modernizado/
+TICOMSYS-Modernizado/
 ├── app/                          # Laravel backend
 │   ├── Http/
 │   │   ├── Controllers/
@@ -37,7 +37,7 @@ TycomSys-Modernizado/
 ├── frontend/                     # React frontend (Argon Dashboard)
 │   ├── src/                     # Código fuente de React
 │   │   ├── components/          # Componentes personalizados
-│   │   ├── pages/              # Páginas específicas de TycomSys
+│   │   ├── pages/              # Páginas específicas de TICOMSYS
 │   │   └── services/           # Servicios para reparaciones
 │   ├── public/                  # Archivos públicos de React
 │   ├── build/                   # Build de producción de React
@@ -55,8 +55,8 @@ TycomSys-Modernizado/
 
 ### 1. Clonar el Repositorio
 ```bash
-git clone https://github.com/wailanbrea/TycomSys-Modernizado.git
-cd TycomSys-Modernizado
+git clone https://github.com/wailanbrea/TICOMSYS-Modernizado.git
+cd TICOMSYS-Modernizado
 ```
 
 ### 2. Instalar Dependencias
@@ -120,7 +120,7 @@ npm run build
 - **API Health Check:** http://localhost:8000/api/health
 - **React Dev Server:** http://localhost:3000 (en modo desarrollo)
 
-## 🎯 Funcionalidades de TycomSys
+## 🎯 Funcionalidades de TICOMSYS
 
 ### 🌐 **Página Web Modernizada**
 - **Hero Section** con animaciones y diseño moderno
@@ -139,7 +139,7 @@ npm run build
 ### 📱 Páginas Disponibles
 
 #### Frontend (React)
-- `/` - Página principal de TycomSys
+- `/` - Página principal de TICOMSYS
 - `/servicios` - Servicios de la empresa
 - `/clientes` - Portfolio de clientes
 - `/reparaciones` - Sistema de reparaciones

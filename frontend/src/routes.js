@@ -17,61 +17,104 @@
 */
 import Index from "views/Index.js";
 import Profile from "views/examples/Profile.js";
-import Maps from "views/examples/Maps.js";
-import Register from "views/examples/Register.js";
-import Login from "views/examples/Login.js";
-import Tables from "views/examples/Tables.js";
-import Icons from "views/examples/Icons.js";
+import UserManagement from "views/examples/UserManagement.js";
+import RoleManagement from "views/examples/RoleManagement.js";
+import RepairEquipmentManagement from "views/examples/RepairEquipmentManagement.js";
+import TicketManagement from "views/examples/TicketManagement.js";
+import InvoiceManagement from "views/examples/InvoiceManagement.js";
+import InvoiceView from "views/examples/InvoiceView.js";
+import Reports from "views/examples/Reports.js";
+import ReportsAdvanced from "views/examples/ReportsAdvanced.js";
 
 var routes = [
   {
-    path: "/index",
+    path: "index",
     name: "Dashboard",
     icon: "ni ni-tv-2 text-primary",
     component: <Index />,
     layout: "/admin",
+    roles: ["admin", "tecnico"]
   },
   {
-    path: "/icons",
-    name: "Icons",
-    icon: "ni ni-planet text-blue",
-    component: <Icons />,
+    path: "user-management",
+    name: "Gestión de Usuarios",
+    icon: "ni ni-single-02 text-yellow",
+    component: <UserManagement />,
     layout: "/admin",
+    roles: ["admin"],
+    permissions: ["manage_users"]
   },
   {
-    path: "/maps",
-    name: "Maps",
-    icon: "ni ni-pin-3 text-orange",
-    component: <Maps />,
+    path: "role-management",
+    name: "Gestión de Roles",
+    icon: "ni ni-badge text-purple",
+    component: <RoleManagement />,
     layout: "/admin",
+    roles: ["admin"],
+    permissions: ["manage_roles"]
   },
   {
-    path: "/user-profile",
-    name: "User Profile",
+    path: "repair-equipment",
+    name: "Equipos de Reparación",
+    icon: "ni ni-settings-gear-65 text-info",
+    component: <RepairEquipmentManagement />,
+    layout: "/admin",
+    roles: ["admin", "tecnico"],
+    permissions: ["manage_equipment"]
+  },
+  {
+    path: "tickets",
+    name: "Estados de Tickets",
+    icon: "ni ni-single-copy-04 text-orange",
+    component: <TicketManagement />,
+    layout: "/admin",
+    roles: ["admin", "tecnico"],
+    permissions: ["manage_tickets", "view_tickets"]
+  },
+  {
+    path: "invoices",
+    name: "Gestión de Facturas",
+    icon: "ni ni-money-coins text-green",
+    component: <InvoiceManagement />,
+    layout: "/admin",
+    roles: ["admin", "tecnico"],
+    permissions: ["manage_invoices"]
+  },
+  {
+    path: "invoice-view",
+    name: "Facturas Registradas",
+    icon: "ni ni-single-copy-04 text-blue",
+    component: <InvoiceView />,
+    layout: "/admin",
+    roles: ["admin", "tecnico"],
+    permissions: ["view_invoices"]
+  },
+  {
+    path: "reports",
+    name: "Reportes",
+    icon: "ni ni-chart-bar-32 text-blue",
+    component: <Reports />,
+    layout: "/admin",
+    roles: ["admin", "tecnico"],
+    permissions: ["view_reports"]
+  },
+  {
+    path: "reports-advanced",
+    name: "Reportes Avanzados",
+    icon: "ni ni-chart-pie-35 text-success",
+    component: <ReportsAdvanced />,
+    layout: "/admin",
+    roles: ["admin", "tecnico"],
+    permissions: ["view_reports"]
+  },
+  {
+    path: "user-profile",
+    name: "Mi Perfil",
     icon: "ni ni-single-02 text-yellow",
     component: <Profile />,
     layout: "/admin",
-  },
-  {
-    path: "/tables",
-    name: "Tables",
-    icon: "ni ni-bullet-list-67 text-red",
-    component: <Tables />,
-    layout: "/admin",
-  },
-  {
-    path: "/login",
-    name: "Login",
-    icon: "ni ni-key-25 text-info",
-    component: <Login />,
-    layout: "/auth",
-  },
-  {
-    path: "/register",
-    name: "Register",
-    icon: "ni ni-circle-08 text-pink",
-    component: <Register />,
-    layout: "/auth",
-  },
+    roles: ["admin", "tecnico"]
+  }
 ];
+
 export default routes;

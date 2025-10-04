@@ -38,17 +38,19 @@ const UserHeader = () => {
         <Container className="d-flex align-items-center" fluid>
           <Row>
             <Col lg="7" md="10">
-              <h1 className="display-2 text-white">Hello Jesse</h1>
+              <h1 className="display-2 text-white">
+                Hola {window.user?.name || 'Usuario'}
+              </h1>
               <p className="text-white mt-0 mb-5">
-                This is your profile page. You can see the progress you've made
-                with your work and manage your projects or assigned tasks
+                Esta es tu página de perfil. Puedes ver el progreso que has hecho
+                con tu trabajo y gestionar tus proyectos o tareas asignadas
               </p>
               <Button
                 color="info"
                 href="#pablo"
                 onClick={(e) => e.preventDefault()}
               >
-                Edit profile
+                Editar perfil
               </Button>
             </Col>
           </Row>

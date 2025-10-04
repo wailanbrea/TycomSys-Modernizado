@@ -17,7 +17,7 @@
 */
 /*eslint-disable*/
 import { useState } from "react";
-import { NavLink as NavLinkRRD, Link } from "react-router-dom";
+import { NavLink as NavLinkRRD, Link, useLocation } from "react-router-dom";
 // nodejs library to set properties for components
 import { PropTypes } from "prop-types";
 
@@ -56,9 +56,11 @@ var ps;
 
 const Sidebar = (props) => {
   const [collapseOpen, setCollapseOpen] = useState();
+  const location = useLocation();
+  
   // verifies if routeName is the one active (in browser input)
   const activeRoute = (routeName) => {
-    return props.location.pathname.indexOf(routeName) > -1 ? "active" : "";
+    return location.pathname.indexOf(routeName) > -1 ? "active" : "";
   };
   // toggles collapse between opened and closed (true/false)
   const toggleCollapse = () => {
@@ -68,22 +70,52 @@ const Sidebar = (props) => {
   const closeCollapse = () => {
     setCollapseOpen(false);
   };
+  // Helper function to check if user has required role
+  const hasRole = (requiredRoles) => {
+    if (!window.user || !window.user.roles) return false;
+    if (!requiredRoles || requiredRoles.length === 0) return true;
+    
+    return requiredRoles.some(role => 
+      window.user.roles.some(userRole => userRole.name === role)
+    );
+  };
+
+  // Helper function to check if user has required permission
+  const hasPermission = (requiredPermissions) => {
+    if (!window.user || !window.user.permissions) return false;
+    if (!requiredPermissions || requiredPermissions.length === 0) return true;
+    
+    return requiredPermissions.some(permission => 
+      window.user.permissions.some(userPermission => userPermission.name === permission)
+    );
+  };
+
   // creates the links that appear in the left menu / Sidebar
   const createLinks = (routes) => {
     return routes.map((prop, key) => {
+      // Check if user has access to this route
+      const hasRoleAccess = hasRole(prop.roles);
+      const hasPermissionAccess = hasPermission(prop.permissions);
+      
+      // Only show route if user has role access and permission access (if permissions are specified)
+      if (!hasRoleAccess || (prop.permissions && !hasPermissionAccess)) {
+        return null;
+      }
+
       return (
         <NavItem key={key}>
           <NavLink
-            to={prop.layout + prop.path}
+            to={prop.layout + "/" + prop.path}
             tag={NavLinkRRD}
             onClick={closeCollapse}
+            className={activeRoute(prop.path)}
           >
             <i className={prop.icon} />
             {prop.name}
           </NavLink>
         </NavItem>
       );
-    });
+    }).filter(Boolean); // Remove null items
   };
 
   const { bgColor, routes, logo } = props;
@@ -136,10 +168,10 @@ const Sidebar = (props) => {
               className="dropdown-menu-arrow"
               right
             >
-              <DropdownItem>Action</DropdownItem>
-              <DropdownItem>Another action</DropdownItem>
+              <DropdownItem>Notificaciones</DropdownItem>
+              <DropdownItem>Alertas del Sistema</DropdownItem>
               <DropdownItem divider />
-              <DropdownItem>Something else here</DropdownItem>
+              <DropdownItem>Ver Todas</DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
           <UncontrolledDropdown nav>
@@ -151,32 +183,64 @@ const Sidebar = (props) => {
                     src={require("../../assets/img/theme/team-1-800x800.jpg")}
                   />
                 </span>
+                {window.user && (
+                  <Media className="ml-2 d-none d-lg-block">
+                    <span className="mb-0 text-sm font-weight-bold">
+                      {window.user.name}
+                    </span>
+                    <br />
+                    <span className="text-muted text-xs">
+                      {window.user.roles?.[0]?.display_name || 'Usuario'}
+                    </span>
+                  </Media>
+                )}
               </Media>
             </DropdownToggle>
             <DropdownMenu className="dropdown-menu-arrow" right>
               <DropdownItem className="noti-title" header tag="div">
-                <h6 className="text-overflow m-0">Welcome!</h6>
+                <h6 className="text-overflow m-0">
+                  ¡Bienvenido{window.user ? `, ${window.user.name}` : ''}!
+                </h6>
               </DropdownItem>
               <DropdownItem to="/admin/user-profile" tag={Link}>
                 <i className="ni ni-single-02" />
-                <span>My profile</span>
+                <span>Mi Perfil</span>
               </DropdownItem>
               <DropdownItem to="/admin/user-profile" tag={Link}>
                 <i className="ni ni-settings-gear-65" />
-                <span>Settings</span>
+                <span>Configuración</span>
               </DropdownItem>
               <DropdownItem to="/admin/user-profile" tag={Link}>
                 <i className="ni ni-calendar-grid-58" />
-                <span>Activity</span>
+                <span>Actividad</span>
               </DropdownItem>
               <DropdownItem to="/admin/user-profile" tag={Link}>
                 <i className="ni ni-support-16" />
-                <span>Support</span>
+                <span>Soporte</span>
               </DropdownItem>
               <DropdownItem divider />
-              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
+              <DropdownItem href="#" onClick={(e) => {
+                e.preventDefault();
+                // Crear formulario para logout
+                const form = document.createElement('form');
+                form.method = 'POST';
+                form.action = '/logout';
+                
+                // Agregar token CSRF
+                const csrfToken = document.querySelector('meta[name="csrf-token"]');
+                if (csrfToken) {
+                  const csrfInput = document.createElement('input');
+                  csrfInput.type = 'hidden';
+                  csrfInput.name = '_token';
+                  csrfInput.value = csrfToken.getAttribute('content');
+                  form.appendChild(csrfInput);
+                }
+                
+                document.body.appendChild(form);
+                form.submit();
+              }}>
                 <i className="ni ni-user-run" />
-                <span>Logout</span>
+                <span>Cerrar Sesión</span>
               </DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>

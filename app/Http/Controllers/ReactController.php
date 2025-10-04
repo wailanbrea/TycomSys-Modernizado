@@ -14,18 +14,62 @@ class ReactController extends Controller
     public function index()
     {
         $reactAppPath = public_path('../frontend/build/index.html');
-        
+
         if (file_exists($reactAppPath)) {
             $content = file_get_contents($reactAppPath);
-            
+
             // Asegurar que las rutas de los assets sean absolutas
             $content = str_replace('/static/', '/static/', $content);
-            
+
+            // Agregar información del usuario autenticado con roles y permisos
+            $userData = null;
+            if (auth()->check()) {
+                $user = auth()->user();
+                $userData = [
+                    'id' => $user->id,
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'roles' => $user->roles->map(function($role) {
+                        return [
+                            'id' => $role->id,
+                            'name' => $role->name,
+                            'display_name' => $role->display_name,
+                            'permissions' => $role->permissions->map(function($permission) {
+                                return [
+                                    'id' => $permission->id,
+                                    'name' => $permission->name,
+                                    'display_name' => $permission->display_name
+                                ];
+                            })
+                        ];
+                    }),
+                    'permissions' => $user->getAllPermissions()->map(function($permission) {
+                        return [
+                            'id' => $permission->id,
+                            'name' => $permission->name,
+                            'display_name' => $permission->display_name
+                        ];
+                    }),
+                    'is_admin' => $user->hasRole('admin'),
+                    'is_tecnico' => $user->hasRole('tecnico')
+                ];
+            }
+
+            // Agregar token CSRF
+            $csrfToken = csrf_token();
+            $csrfScript = '<meta name="csrf-token" content="' . $csrfToken . '">';
+            $content = str_replace('</head>', $csrfScript . '</head>', $content);
+
+            if ($userData) {
+                $userScript = '<script>window.user = ' . json_encode($userData) . ';</script>';
+                $content = str_replace('</head>', $userScript . '</head>', $content);
+            }
+
             return response($content, 200, [
                 'Content-Type' => 'text/html; charset=utf-8'
             ]);
         }
-        
+
         return response()->view('react-app', [], 200);
     }
     

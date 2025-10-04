@@ -21,7 +21,6 @@ import React from "react";
 import { Card, Container, Row } from "reactstrap";
 
 // core components
-import Header from "components/Headers/Header.js";
 
 const MapWrapper = () => {
   const mapRef = React.useRef(null);
@@ -116,9 +115,8 @@ const MapWrapper = () => {
 const Maps = () => {
   return (
     <>
-      <Header />
       {/* Page content */}
-      <Container className="mt--7" fluid>
+      <Container className="mt-5" fluid>
         <Row>
           <div className="col">
             <Card className="shadow border-0">
