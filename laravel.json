@@ -1,5 +1,10 @@
 {
-    "web": {
-        "document_root": "public"
+  "web": {
+    "document_root": "public"
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-php"
     }
+  ]
 }
