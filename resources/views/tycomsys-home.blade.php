@@ -271,6 +271,16 @@
         transform: scale(0.8);
         pointer-events: none;
     }
+    /* Botón de atención en header */
+    .attention-pill {
+        box-shadow: 0 0 0 0 rgba(71,178,228,0.7);
+        animation: glow-pulse 1.6s ease-in-out infinite;
+    }
+    @keyframes glow-pulse {
+        0% { box-shadow: 0 0 0 0 rgba(71,178,228,0.7); transform: translateY(0); }
+        50% { box-shadow: 0 0 0 8px rgba(71,178,228,0.0); transform: translateY(-1px); }
+        100% { box-shadow: 0 0 0 0 rgba(71,178,228,0.0); transform: translateY(0); }
+    }
   </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-foreground-light dark:text-foreground-dark">
@@ -285,7 +295,6 @@
 <img src="{{ asset('images/logoticomsys.png') }}" alt="TicomSys Logo" class="h-16 w-auto">
 </div>
 <nav class="hidden md:flex items-center gap-8">
-<a class="inline-flex items-center px-4 py-2 bg-secondary text-white text-sm font-semibold rounded-md hover:bg-secondary/90 transition-colors" href="/reparaciones">Consultar Reparación</a>
 <a class="text-sm font-medium hover:text-primary transition-colors" href="/software">Software</a>
 <a class="text-sm font-medium hover:text-primary transition-colors" href="/servicios">Servicios</a>
 <a class="text-sm font-medium hover:text-primary transition-colors" href="#clients">Clientes</a>
@@ -304,7 +313,7 @@
 <div class="absolute inset-0" style="background-image: url('{{ asset('images/verne-ho-0LAJfSNa-xQ-unsplash.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
 <div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-background-dark/40 to-background-dark/10"></div>
 <div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
-<div class="min-h-[60vh] md:min-h-[70vh] flex flex-col items-center justify-center py-24 text-white text-center">
+<div class="min-h-[60vh] md:min-h-[70vh] flex flex-col items-center justify-center py-16 md:py-24 text-white text-center">
 <div class="max-w-4xl space-y-8">
 <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
 <span class="block text-fade-in">Soluciones Informáticas</span>
@@ -313,12 +322,12 @@
 <p class="text-lg md:text-xl text-white/90 mt-6 text-subtitle">
 Especialistas en tecnología y gestión documental
 </p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 text-fade-in" style="animation-delay: 0.9s;">
-<button class="bg-white text-primary text-base font-semibold h-12 px-8 rounded-lg btn-glow" onclick="window.location.href='/servicios'">
-                            Nuestros Servicios
-                        </button>
-<button class="bg-secondary text-white text-base font-semibold h-12 px-8 rounded-lg btn-glow" onclick="window.location.href='/reparaciones'">
+<div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-6 md:mt-8 text-fade-in" style="animation-delay: 0.9s;">
+<button class="bg-white text-primary text-base font-semibold h-12 px-8 rounded-lg btn-glow attention-pill" onclick="window.location.href='/reparaciones'">
                             Consultar Reparación
+                        </button>
+<button class="bg-secondary text-white text-base font-semibold h-12 px-8 rounded-lg btn-glow" onclick="window.location.href='/servicios'">
+                            Nuestros Servicios
                         </button>
 </div>
 

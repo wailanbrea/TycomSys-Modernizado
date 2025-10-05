@@ -70,7 +70,6 @@
 </a>
 </div>
 <nav class="hidden md:flex items-center gap-8">
-<a class="inline-flex items-center px-4 py-2 bg-secondary text-white text-sm font-semibold rounded-md hover:bg-secondary/90 transition-colors" href="/reparaciones">Consultar Reparación</a>
 <a class="text-sm font-medium hover:text-primary transition-colors" href="/software">Software</a>
 <a class="text-sm font-medium hover:text-primary transition-colors" href="/servicios">Servicios</a>
 <a class="text-sm font-medium hover:text-primary transition-colors" href="/#clients">Clientes</a>
@@ -84,7 +83,7 @@
 
 <!-- Hero Section -->
 <main class="flex-1">
-<section class="relative bg-gradient-to-br from-primary via-secondary to-blue-600 py-20 sm:py-28">
+<section class="relative bg-gradient-to-br from-primary via-secondary to-blue-600 py-16 sm:py-24">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 <div class="text-center text-white">
 <h1 class="text-4xl md:text-6xl font-bold mb-6">Sistema de Reparaciones</h1>
@@ -96,7 +95,7 @@ Consulta el estado de tu reparación en tiempo real. Seguimiento completo de tu 
 </section>
 
 <!-- Repair Status Section -->
-<section class="py-20 sm:py-28">
+<section class="py-12 sm:py-20">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 <div class="max-w-4xl mx-auto">
 <div class="bg-white dark:bg-background-dark rounded-2xl shadow-xl p-8 lg:p-12">
