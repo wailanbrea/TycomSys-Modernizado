@@ -1,46 +1,21 @@
 {
   "version": 2,
-  "name": "ticomsys-moderno",
+  "name": "ticomsys-moder",
   "buildCommand": "npm run vercel-build",
   "outputDirectory": "frontend/build",
   "builds": [
     {
-      "src": "public/index.php",
-      "use": "@vercel/php"
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/public/index.php"
-    },
-    {
-      "src": "/admin/(.*)",
-      "dest": "/public/index.php"
-    },
-    {
-      "src": "/tecnico/(.*)",
-      "dest": "/public/index.php"
-    },
-    {
-      "src": "/customer/(.*)",
-      "dest": "/public/index.php"
-    },
-    {
-      "src": "/auth/(.*)",
-      "dest": "/public/index.php"
-    },
-    {
-      "src": "/static/(.*)",
-      "dest": "/frontend/build/static/$1"
-    },
-    {
-      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot))",
-      "dest": "/frontend/build/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/frontend/build/index.html"
+      "dest": "/frontend/build/$1"
     }
   ],
   "env": {
