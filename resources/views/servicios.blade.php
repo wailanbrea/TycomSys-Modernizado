@@ -70,13 +70,13 @@
 </a>
 </div>
 <nav class="hidden md:flex items-center gap-8">
-<a class="text-sm font-medium hover:text-primary transition-colors" href="/#about">Sobre Nosotros</a>
-<a class="text-sm font-medium text-primary transition-colors" href="/servicios">Servicios</a>
+<a class="inline-flex items-center px-4 py-2 bg-secondary text-white text-sm font-semibold rounded-md hover:bg-secondary/90 transition-colors" href="/reparaciones">Consultar Reparación</a>
 <a class="text-sm font-medium hover:text-primary transition-colors" href="/software">Software</a>
+<a class="text-sm font-medium text-primary transition-colors" href="/servicios">Servicios</a>
 <a class="text-sm font-medium hover:text-primary transition-colors" href="/#clients">Clientes</a>
 <a class="text-sm font-medium hover:text-primary transition-colors" href="/#tech-solutions">Soluciones</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="/reparaciones">Reparaciones</a>
 <a class="text-sm font-medium hover:text-primary transition-colors" href="/#contact">Contacto</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="/#about">Sobre Nosotros</a>
 </nav>
 </div>
 </div>
