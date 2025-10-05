@@ -22,10 +22,11 @@
   "bugs": {
     "url": "https://github.com/creativetimofficial/argon-dashboard-react/issues"
   },
-  "homepage": "https://demos.creative-tim.com/argon-dashboard-react/",
+  "homepage": "https://ticomsys-moderno.vercel.app",
   "scripts": {
     "start": "react-scripts start",
     "build": "cross-env PUBLIC_URL=/ react-scripts build",
+    "vercel-build": "npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",

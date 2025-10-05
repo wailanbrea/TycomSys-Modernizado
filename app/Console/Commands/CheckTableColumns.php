@@ -47,3 +47,4 @@ class CheckTableColumns extends Command
 }
 
 
+

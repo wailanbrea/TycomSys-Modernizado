@@ -67,3 +67,4 @@ class ShowEquipmentData extends Command
 
 
 
+
