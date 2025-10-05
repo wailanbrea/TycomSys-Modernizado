@@ -28,7 +28,7 @@ En la sección "Environment Variables" de Vercel, agrega:
 ```env
 APP_NAME=TicomSys Moderno
 APP_ENV=production
-APP_KEY=base64:TU_CLAVE_AQUI
+APP_KEY=base64:jFD66r4zXQsDK3thqmX+uGoXg6b2j3tB8FPq0l2CHns=
 APP_DEBUG=false
 APP_URL=https://ticomsys-moderno.vercel.app
 
