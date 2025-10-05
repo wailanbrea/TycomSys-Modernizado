@@ -46,11 +46,6 @@
   "env": {
     "APP_ENV": "production",
     "APP_DEBUG": "false",
-    "APP_URL": "https://ticomsys-moderno.vercel.app"
-  },
-  "functions": {
-    "public/index.php": {
-      "runtime": "php@8.2"
-    }
+    "APP_URL": "https://ticomsys-moder.vercel.app"
   }
 }
