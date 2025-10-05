@@ -132,6 +132,11 @@ const AdminNavbar = (props) => {
                   
                   document.body.appendChild(form);
                   form.submit();
+                  
+                  // Redirigir a la página principal después del logout
+                  setTimeout(() => {
+                    window.location.href = '/';
+                  }, 1000);
                 }}>
                   <i className="ni ni-user-run" />
                   <span>Cerrar Sesión</span>
