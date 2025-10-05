@@ -173,6 +173,8 @@ Route::get('/dashboard', [ReactController::class, 'index'])->middleware('employe
 // Rutas para Admin - Usando Argon Dashboard React
 Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/dashboard', [ReactController::class, 'index'])->name('admin.dashboard');
+    Route::get('/index', [ReactController::class, 'index'])->name('admin.index');
+    Route::get('/home', [ReactController::class, 'index'])->name('admin.home');
     Route::get('/users', [ReactController::class, 'index'])->middleware('permission:manage_users')->name('admin.users');
     Route::get('/roles', [ReactController::class, 'index'])->middleware('permission:manage_roles')->name('admin.roles');
     Route::get('/repair-equipment', [ReactController::class, 'index'])->middleware('permission:manage_equipment')->name('admin.repair-equipment');

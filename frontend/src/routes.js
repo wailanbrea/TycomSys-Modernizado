@@ -16,6 +16,7 @@
 
 */
 import Index from "views/Index.js";
+import Home from "views/Home.js";
 import Profile from "views/examples/Profile.js";
 import UserManagement from "views/examples/UserManagement.js";
 import RoleManagement from "views/examples/RoleManagement.js";
@@ -27,6 +28,14 @@ import Reports from "views/examples/Reports.js";
 import ReportsAdvanced from "views/examples/ReportsAdvanced.js";
 
 var routes = [
+  {
+    path: "home",
+    name: "Página Principal",
+    icon: "ni ni-shop text-primary",
+    component: <Home />,
+    layout: "/admin",
+    roles: ["admin", "tecnico"]
+  },
   {
     path: "index",
     name: "Dashboard",

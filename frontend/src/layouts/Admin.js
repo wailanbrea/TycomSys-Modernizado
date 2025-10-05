@@ -66,7 +66,7 @@ const Admin = (props) => {
         {...props}
         routes={routes}
         logo={{
-          innerLink: "/admin/index",
+          innerLink: "/admin/home",
           imgSrc: require("../assets/img/brand/ticomsys-logo.png"),
           imgAlt: "TicomSys",
         }}
@@ -78,7 +78,7 @@ const Admin = (props) => {
         />
         <Routes>
           {getRoutes(routes)}
-          <Route path="*" element={<Navigate to="/admin/index" replace />} />
+          <Route path="*" element={<Navigate to="/admin/home" replace />} />
         </Routes>
         <Container fluid>
           <AdminFooter />
