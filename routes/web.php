@@ -153,6 +153,19 @@ Route::prefix('api')->group(function () {
 // Ruta principal para la página moderna de TICOMSYS
 Route::get('/', [TicomsysController::class, 'index'])->name('home');
 
+// Rutas para páginas públicas
+Route::get('/servicios', function () {
+    return view('servicios');
+})->name('servicios');
+
+Route::get('/software', function () {
+    return view('software');
+})->name('software');
+
+Route::get('/reparaciones', function () {
+    return view('reparaciones');
+})->name('reparaciones');
+
 // Rutas para servir el frontend React desde Render
 Route::get('/admin/{any}', [ReactController::class, 'index'])->where('any', '.*');
 Route::get('/admin', [ReactController::class, 'index']);

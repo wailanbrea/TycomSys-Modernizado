@@ -282,14 +282,15 @@
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex items-center justify-between h-20">
 <div class="flex items-center gap-4 w-full justify-center">
-<img src="{{ asset('images/logoticomsys.png') }}" alt="TicomSys Logo" class="h-12 w-auto">
+<img src="{{ asset('images/logoticomsys.png') }}" alt="TicomSys Logo" class="h-16 w-auto">
 </div>
 <nav class="hidden md:flex items-center gap-8">
 <a class="text-sm font-medium hover:text-primary transition-colors" href="#about">Sobre Nosotros</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#services">Servicios</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#products">Productos</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="/servicios">Servicios</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="/software">Software</a>
 <a class="text-sm font-medium hover:text-primary transition-colors" href="#clients">Clientes</a>
 <a class="text-sm font-medium hover:text-primary transition-colors" href="#tech-solutions">Soluciones</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="/reparaciones">Reparaciones</a>
 <a class="text-sm font-medium hover:text-primary transition-colors" href="#contact">Contacto</a>
 </nav>
 </div>
@@ -313,10 +314,10 @@
 Especialistas en tecnología y gestión documental
 </p>
 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 text-fade-in" style="animation-delay: 0.9s;">
-<button class="bg-white text-primary text-base font-semibold h-12 px-8 rounded-lg btn-glow" onclick="window.location.href='#services'">
+<button class="bg-white text-primary text-base font-semibold h-12 px-8 rounded-lg btn-glow" onclick="window.location.href='/servicios'">
                             Nuestros Servicios
                         </button>
-<button class="bg-secondary text-white text-base font-semibold h-12 px-8 rounded-lg btn-glow" onclick="window.location.href='#repair'">
+<button class="bg-secondary text-white text-base font-semibold h-12 px-8 rounded-lg btn-glow" onclick="window.location.href='/reparaciones'">
                             Consultar Reparación
                         </button>
 </div>
@@ -383,376 +384,28 @@ Actualmente contamos con personal profesional con más de 25 años de experienci
 </div>
 </section>
 
-<!-- Services Section -->
-<section id="services" class="bg-background-light/50 dark:bg-background-dark/50 py-20 sm:py-28">
+<!-- Producto Principal - Suite Aquarius -->
+<section class="bg-background-light/50 dark:bg-background-dark/50 py-20 sm:py-28">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-12">
-<h2 class="text-3xl md:text-4xl font-bold tracking-tight">Lo que Ofrecemos</h2>
-<p class="text-lg text-foreground-muted-light dark:text-foreground-muted-dark mt-4">Servicios especializados en tecnología y gestión documental</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<!-- Servicio 1 -->
-<div class="flex flex-col gap-4 group bg-white dark:bg-background-dark p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-<img src="{{ asset('images/Aquarius.png') }}" alt="AQuarius Logo" class="w-8 h-8 object-contain">
-</div>
-<div>
-<h3 class="text-lg font-bold">Suite AQuarius Software</h3>
-<p class="text-sm text-foreground-muted-light dark:text-foreground-muted-dark mt-2">
-Venta y Soporte Técnico Exclusivo a la suite AQuarius Software
-</p>
-</div>
-</div>
-
-<!-- Servicio 2 -->
-<div class="flex flex-col gap-4 group bg-white dark:bg-background-dark p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-<div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
-<svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-</svg>
-</div>
-<div>
-<h3 class="text-lg font-bold">Asesorías Informáticas</h3>
-<p class="text-sm text-foreground-muted-light dark:text-foreground-muted-dark mt-2">
-Consultoría especializada en soluciones tecnológicas para empresas
-</p>
-</div>
-</div>
-
-<!-- Servicio 3 -->
-<div class="flex flex-col gap-4 group bg-white dark:bg-background-dark p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-<div class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center">
-<svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-</svg>
-</div>
-<div>
-<h3 class="text-lg font-bold">Tratamiento Archivístico</h3>
-<p class="text-sm text-foreground-muted-light dark:text-foreground-muted-dark mt-2">
-Tratamiento Archivístico y Organización de Documentos (físicos y digitales)
-</p>
-</div>
-</div>
-
-<!-- Servicio 4 -->
-<div class="flex flex-col gap-4 group bg-white dark:bg-background-dark p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-<div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center">
-<svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-</svg>
-</div>
-<div>
-<h3 class="text-lg font-bold">Soporte Técnico</h3>
-<p class="text-sm text-foreground-muted-light dark:text-foreground-muted-dark mt-2">
-Soporte técnico especializado para equipos y sistemas informáticos
-</p>
-</div>
-</div>
-
-<!-- Servicio 5 -->
-<div class="flex flex-col gap-4 group bg-white dark:bg-background-dark p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-<div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center">
-<svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10m-10 0a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-</svg>
-</div>
-<div>
-<h3 class="text-lg font-bold">Digitalización Masiva</h3>
-<p class="text-sm text-foreground-muted-light dark:text-foreground-muted-dark mt-2">
-Digitalización Masiva de Documentos (en instalaciones del cliente o en las propias: personal, equipos, software y experiencia)
-</p>
-</div>
-</div>
-
-<!-- Servicio 6 -->
-<div class="flex flex-col gap-4 group bg-white dark:bg-background-dark p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-<div class="w-12 h-12 bg-red-500/10 rounded-lg flex items-center justify-center">
-<svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
-</svg>
-</div>
-<div>
-<h3 class="text-lg font-bold">Equipos Tecnológicos</h3>
-<p class="text-sm text-foreground-muted-light dark:text-foreground-muted-dark mt-2">
-Venta de Equipos Tecnológicos de última generación
-</p>
-</div>
-</div>
-
-<!-- Servicio 7 -->
-<div class="flex flex-col gap-4 group bg-white dark:bg-background-dark p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-<div class="w-12 h-12 bg-yellow-500/10 rounded-lg flex items-center justify-center">
-<svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-</svg>
-</div>
-<div>
-<h3 class="text-lg font-bold">Entrenamientos</h3>
-<p class="text-sm text-foreground-muted-light dark:text-foreground-muted-dark mt-2">
-Entrenamientos sobre Digitalización y Organización Documental
-</p>
-</div>
-</div>
-
-<!-- Servicio 8 -->
-<div class="flex flex-col gap-4 group bg-white dark:bg-background-dark p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-<div class="w-12 h-12 bg-indigo-500/10 rounded-lg flex items-center justify-center">
-<svg class="w-6 h-6 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-</svg>
-</div>
-<div>
-<h3 class="text-lg font-bold">Escáneres Alto Volumen</h3>
-<p class="text-sm text-foreground-muted-light dark:text-foreground-muted-dark mt-2">
-Venta y Soporte Técnico a Escáneres de Alto Volumen para manejo de documentos
-</p>
-</div>
-</div>
-
-<!-- Servicio 9 -->
-<div class="flex flex-col gap-4 group bg-white dark:bg-background-dark p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-<div class="w-12 h-12 bg-teal-500/10 rounded-lg flex items-center justify-center">
-<svg class="w-6 h-6 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-</svg>
-</div>
-<div>
-<h3 class="text-lg font-bold">Acuerdos de Servicios</h3>
-<p class="text-sm text-foreground-muted-light dark:text-foreground-muted-dark mt-2">
-Acuerdos de Servicios Técnicos especializados
-</p>
-</div>
-</div>
-
-<!-- Servicio 10 -->
-<div class="flex flex-col gap-4 group bg-white dark:bg-background-dark p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-<div class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center">
-<svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-</svg>
-</div>
-<div>
-<h3 class="text-lg font-bold">Inventario Local</h3>
-<p class="text-sm text-foreground-muted-light dark:text-foreground-muted-dark mt-2">
-Inventario Local de Recursos Técnicos y Desarrolladores
-</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Products Section -->
-<section id="products" class="py-20 sm:py-28 bg-gray-50 dark:bg-gray-900">
-<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-<div class="max-w-7xl mx-auto">
-<!-- Header -->
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-6">
-Productos
-</h2>
-<p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-Para la solución de Digitalización Masiva de Documentos, nuestro producto principal es la Suite AQuarius Software
-</p>
-</div>
-
-<!-- AQuarius Overview -->
-<div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 mb-12">
+<div class="max-w-6xl mx-auto">
+<div class="bg-white dark:bg-background-dark rounded-2xl shadow-xl p-8 lg:p-12">
 <div class="flex flex-col lg:flex-row items-center gap-8">
-<div class="lg:w-1/2">
-<img src="{{ asset('images/Aquarius.png') }}" alt="AQuarius Software" class="w-32 h-32 mx-auto lg:mx-0 mb-6 lg:mb-0">
-</div>
-<div class="lg:w-1/2">
-<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+<div class="lg:w-1/2 text-center lg:text-left">
+<img src="{{ asset('images/Aquarius.png') }}" alt="Suite AQuarius Software" class="w-32 h-32 mx-auto lg:mx-0 mb-6">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
 Suite AQuarius Software
-</h3>
-<p class="text-gray-600 dark:text-gray-300 mb-6">
-Una solución orientada exclusivamente al manejo de documentos digitales en las empresas, contribuyendo así al ahorro de papel impreso y de esta forma a la preservación del medio ambiente.
+</h2>
+<p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+Nuestro producto principal para la digitalización masiva de documentos. Una solución completa que transforma la gestión documental de su empresa.
 </p>
-<div class="grid grid-cols-2 gap-4 text-sm">
-<div class="flex items-center gap-2">
-<svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+<a href="/software" class="inline-flex items-center px-8 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl">
+<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
 </svg>
-<span class="text-gray-600 dark:text-gray-300">Digitalización Masiva</span>
-</div>
-<div class="flex items-center gap-2">
-<svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-</svg>
-<span class="text-gray-600 dark:text-gray-300">Gestión Electrónica</span>
-</div>
-<div class="flex items-center gap-2">
-<svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-</svg>
-<span class="text-gray-600 dark:text-gray-300">Seguridad Avanzada</span>
-</div>
-<div class="flex items-center gap-2">
-<svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-</svg>
-<span class="text-gray-600 dark:text-gray-300">Acceso 24/7</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<!-- Detailed Description -->
-<div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-12">
-<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-Proceso de Digitalización con AQuarius
-</h3>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-<div>
-<p class="text-gray-600 dark:text-gray-300 mb-4">
-Con AQuarius podemos tomar todos los archivos físicos de su empresa, digitalizarlos a través de escáneres de alta velocidad o producción, crear una aplicación personalizada para cada cliente, agregarles los índices para la posterior búsqueda de los mismos y ponerlos a disposición de los clientes de la empresa tanto interno como externo a través de intranet e internet.
-</p>
-<p class="text-gray-600 dark:text-gray-300 mb-4">
-Protegemos sus datos a través de un poderoso módulo de seguridad, el cual puede ser totalmente personalizado para la asignación y monitoreo de privilegio a los usuarios del mismo, con lo cual logramos saber en cualquier momento quien hizo que con los documentos de la empresa.
-</p>
-</div>
-<div>
-<p class="text-gray-600 dark:text-gray-300 mb-4">
-El proceso de digitalización permite convertir documentos físicos (en papel) a imágenes electrónicas, las cuales son almacenadas en un medio electrónico que permite posteriormente ser localizadas en segundos, incluso por varias personas al mismo tiempo, sin el riesgo de perder o deteriorar los documentos.
-</p>
-<p class="text-gray-600 dark:text-gray-300">
-AQuarius permite a la gerencia de la empresa, las organizaciones y a las áreas operativas, obtener información de los diferentes documentos involucrados en un proceso administrativo.
-</p>
-</div>
-</div>
-</div>
-
-<!-- Modules Grid -->
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-<!-- WebScan / AQWeb / AQIndex -->
-<div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
-<div class="flex items-center gap-4 mb-4">
-<div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
-<svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-</svg>
-</div>
-<h4 class="text-xl font-semibold text-gray-900 dark:text-white">WebScan / AQWeb / AQIndex</h4>
-</div>
-<p class="text-gray-600 dark:text-gray-300 mb-4">
-Módulos con los que podemos tomar sus documentos, escanearlos, cargarlos e indexarlos en cualquier formato de imagen editable, hacerles OCR y cargar los datos de índices de forma automática mediante etiquetas programadas según levantamiento de OCR.
-</p>
-<ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-<li class="flex items-center gap-2">
-<svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-</svg>
-Acceso web desde cualquier lugar
-</li>
-<li class="flex items-center gap-2">
-<svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-</svg>
-Disponible 24/7
-</li>
-<li class="flex items-center gap-2">
-<svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-</svg>
-Solo necesita navegador web
-</li>
-</ul>
-</div>
-
-<!-- AQuarius DMS -->
-<div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
-<div class="flex items-center gap-4 mb-4">
-<div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center">
-<svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-</svg>
-</div>
-<h4 class="text-xl font-semibold text-gray-900 dark:text-white">AQuarius DMS</h4>
-</div>
-<p class="text-gray-600 dark:text-gray-300 mb-4">
-Document Management Software para el manejo de los documentos, permite capturar los documentos desde diversas fuentes, almacenarlos en medios electrónicos y permite que los usuarios los recuperen desde sus computadoras.
-</p>
-<ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-<li class="flex items-center gap-2">
-<svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-</svg>
-Controlar y procesar documentos
-</li>
-<li class="flex items-center gap-2">
-<svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-</svg>
-Almacenar e indexar
-</li>
-<li class="flex items-center gap-2">
-<svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-</svg>
-Consultar y hacer anotaciones
-</li>
-</ul>
-</div>
-
-<!-- AQuarius Cloud -->
-<div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
-<div class="flex items-center gap-4 mb-4">
-<div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center">
-<svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path>
-</svg>
-</div>
-<h4 class="text-xl font-semibold text-gray-900 dark:text-white">AQuarius Cloud</h4>
-</div>
-<p class="text-gray-600 dark:text-gray-300 mb-4">
-Módulo especializado que permite digitalizar sus documentos localmente y almacenarlos en línea en servidores de TICOMSYS y AQuarius Software para tenerlos accesibles desde cualquier lugar.
-</p>
-<ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-<li class="flex items-center gap-2">
-<svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-</svg>
-Digitalización local
-</li>
-<li class="flex items-center gap-2">
-<svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-</svg>
-Almacenamiento en la nube
-</li>
-<li class="flex items-center gap-2">
-<svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-</svg>
-Sin inversión en equipos terceros
-</li>
-</ul>
-</div>
-</div>
-
-<!-- Integration Section -->
-<div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 text-center">
-<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-Integración con Sistemas Existentes
-</h3>
-<p class="text-gray-600 dark:text-gray-300 mb-6 max-w-3xl mx-auto">
-AQuarius puede integrarse con bases de datos como SQL Server, Oracle, entre otras, así como con los sistemas ERP, CRM o cualquier aplicación de negocios instalados en su institución.
-</p>
-<div class="flex flex-wrap justify-center gap-4">
-<span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">SQL Server</span>
-<span class="px-4 py-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm font-medium">Oracle</span>
-<span class="px-4 py-2 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm font-medium">ERP</span>
-<span class="px-4 py-2 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium">CRM</span>
-<span class="px-4 py-2 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-sm font-medium">Aplicaciones de Negocio</span>
-</div>
-</div>
-
-<!-- CTA -->
-<div class="text-center mt-12">
-<a href="#contact" class="inline-flex items-center px-8 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl">
+Ver Todos los Software
+</a>
+<a href="#contact" class="inline-flex items-center px-8 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary/90 transition-colors shadow-lg hover:shadow-xl">
 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
 </svg>
@@ -760,8 +413,32 @@ Solicitar Información
 </a>
 </div>
 </div>
+<div class="lg:w-1/2">
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-primary/10 p-4 rounded-lg text-center">
+<div class="text-2xl font-bold text-primary mb-2">25+</div>
+<div class="text-sm text-gray-600 dark:text-gray-300">Años de Experiencia</div>
+</div>
+<div class="bg-secondary/10 p-4 rounded-lg text-center">
+<div class="text-2xl font-bold text-secondary mb-2">50+</div>
+<div class="text-sm text-gray-600 dark:text-gray-300">Clientes Satisfechos</div>
+</div>
+<div class="bg-green-500/10 p-4 rounded-lg text-center">
+<div class="text-2xl font-bold text-green-500 mb-2">100%</div>
+<div class="text-sm text-gray-600 dark:text-gray-300">Soporte Técnico</div>
+</div>
+<div class="bg-purple-500/10 p-4 rounded-lg text-center">
+<div class="text-2xl font-bold text-purple-500 mb-2">24/7</div>
+<div class="text-sm text-gray-600 dark:text-gray-300">Disponibilidad</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
+
 
 <!-- Clients Section -->
 <section id="clients" class="py-16 md:py-24 bg-background-light dark:bg-background-dark">
@@ -1064,85 +741,6 @@ Solicitar Información
 </div>
 </section>
 
-<!-- Repair Section -->
-<section id="repair" class="bg-background-light/50 dark:bg-background-dark/50 py-20 sm:py-28">
-<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-12">
-<h2 class="text-3xl md:text-4xl font-bold tracking-tight">Sistema de Reparaciones</h2>
-<p class="text-lg text-foreground-muted-light dark:text-foreground-muted-dark mt-4">Consulta el estado de tu reparación en tiempo real</p>
-</div>
-<div class="max-w-2xl mx-auto">
-<div class="bg-white dark:bg-background-dark p-8 rounded-xl shadow-lg">
-<div class="text-center mb-8">
-<h3 class="text-2xl font-bold mb-4">Consultar Estado de Reparación</h3>
-<p class="text-foreground-muted-light dark:text-foreground-muted-dark">
-Ingresa el número de ticket para consultar el estado actual de tu reparación
-</p>
-</div>
-<form id="repair-form" class="space-y-6">
-<div>
-<label class="block text-sm font-medium mb-2" for="ticketNumber">Número de Ticket</label>
-<input id="ticketNumber" type="text" placeholder="Ej: TK-2024-001" class="w-full px-4 py-3 border border-border-light dark:border-border-dark rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-background-dark">
-</div>
-<button type="submit" class="w-full bg-primary text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity">
-                        Consultar Estado
-                    </button>
-</form>
-<div id="repair-result" class="mt-8 hidden">
-  <div id="repair-card" class="bg-white dark:bg-background-dark p-6 rounded-xl shadow-lg">
-    <div class="flex items-center justify-between mb-4">
-      <div>
-        <h4 class="text-xl font-bold">Estado del Equipo</h4>
-        <p class="text-sm text-foreground-muted-light dark:text-foreground-muted-dark">Ticket: <span id="resTicket" class="font-semibold"></span></p>
-      </div>
-      <div>
-        <span id="resBadge" class="inline-flex items-center px-3 py-1 rounded-lg text-white text-sm"></span>
-      </div>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div>
-        <h5 class="font-semibold mb-2">Información del Cliente</h5>
-        <p class="text-sm"><span class="text-foreground-muted-light dark:text-foreground-muted-dark">Nombre:</span> <span id="resCustomer"></span></p>
-      </div>
-      <div>
-        <h5 class="font-semibold mb-2">Equipo</h5>
-        <p class="text-sm"><span class="text-foreground-muted-light dark:text-foreground-muted-dark">Tipo:</span> <span id="resType"></span></p>
-        <p class="text-sm"><span class="text-foreground-muted-light dark:text-foreground-muted-dark">Marca:</span> <span id="resBrand"></span></p>
-        <p class="text-sm"><span class="text-foreground-muted-light dark:text-foreground-muted-dark">Modelo:</span> <span id="resModel"></span></p>
-        <p class="text-sm"><span class="text-foreground-muted-light dark:text-foreground-muted-dark">Serie:</span> <span id="resSerial"></span></p>
-      </div>
-    </div>
-    <div class="mt-4 text-right">
-      <small class="text-foreground-muted-light dark:text-foreground-muted-dark">Última actualización: <span id="resUpdatedAt"></span></small>
-    </div>
-  </div>
-  <div id="repair-empty" class="text-center p-6 hidden">
-    <p class="text-sm text-foreground-muted-light dark:text-foreground-muted-dark">No se encontró información para este ticket.</p>
-  </div>
-  <div id="repair-error" class="text-center p-6 hidden">
-    <p class="text-sm text-red-600">Ocurrió un error al consultar el estado. Inténtalo nuevamente.</p>
-  </div>
-  <div id="repair-loading" class="text-center p-6 hidden">
-    <p class="text-sm text-foreground-muted-light dark:text-foreground-muted-dark">Consultando estado...</p>
-  </div>
-  <div class="mt-2 text-center">
-    <button id="refreshBtn" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors text-sm">
-      <i class="mr-1">↻</i> Actualizar Estado
-    </button>
-    <br>
-    <small class="text-foreground-muted-light dark:text-foreground-muted-dark">Haz clic en "Actualizar Estado" para ver los cambios más recientes.</small>
-  </div>
-  
-</div>
-<div class="mt-8 text-center">
-<p class="text-sm text-foreground-muted-light dark:text-foreground-muted-dark">
-¿No tienes un ticket? <a href="#contact" class="text-primary hover:underline">Contáctanos</a> para registrar tu equipo
-</p>
-</div>
-</div>
-</div>
-</div>
-</section>
 
 <!-- Contact Section -->
 <section id="contact" class="py-20 sm:py-28">
@@ -1215,9 +813,10 @@ Ingresa el número de ticket para consultar el estado actual de tu reparación
 <div class="flex flex-col md:flex-row justify-between items-center gap-8">
 <div class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-sm text-foreground-muted-light dark:text-foreground-muted-dark">
 <a class="hover:text-primary transition-colors" href="#about">Sobre Nosotros</a>
-<a class="hover:text-primary transition-colors" href="#services">Servicios</a>
-<a class="hover:text-primary transition-colors" href="#products">Productos</a>
-<a class="hover:text-primary transition-colors" href="#repair">Reparaciones</a>
+<a class="hover:text-primary transition-colors" href="/servicios">Servicios</a>
+<a class="hover:text-primary transition-colors" href="/software">Software</a>
+<a class="hover:text-primary transition-colors" href="#clients">Clientes</a>
+<a class="hover:text-primary transition-colors" href="/reparaciones">Reparaciones</a>
 <a class="hover:text-primary transition-colors" href="#contact">Contacto</a>
 </div>
 <p class="text-sm text-foreground-muted-light dark:text-foreground-muted-dark">© 2025 BSolutions.Dev. Todos los derechos reservados.</p>
@@ -1255,115 +854,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Form handling for repair status check (inline results + polling)
-(function() {
-    const form = document.querySelector('#repair-form');
-    const resultWrap = document.getElementById('repair-result');
-    const card = document.getElementById('repair-card');
-    const empty = document.getElementById('repair-empty');
-    const errorBox = document.getElementById('repair-error');
-    const loading = document.getElementById('repair-loading');
-    const resTicket = document.getElementById('resTicket');
-    const resBadge = document.getElementById('resBadge');
-    const resCustomer = document.getElementById('resCustomer');
-    const resType = document.getElementById('resType');
-    const resBrand = document.getElementById('resBrand');
-    const resModel = document.getElementById('resModel');
-    const resSerial = document.getElementById('resSerial');
-    const resUpdatedAt = document.getElementById('resUpdatedAt');
-
-    const statusStyles = {
-        received: { bg: 'bg-gray-600', text: 'Recibido' },
-        in_review: { bg: 'bg-yellow-500', text: 'En Revisión' },
-        in_repair: { bg: 'bg-blue-500', text: 'En Reparación' },
-        waiting_parts: { bg: 'bg-purple-500', text: 'Esperando Repuestos' },
-        ready: { bg: 'bg-green-500', text: 'Listo' },
-        delivered: { bg: 'bg-gray-800', text: 'Entregado' },
-        cancelled: { bg: 'bg-red-600', text: 'Cancelado' }
-    };
-
-    let pollingId = null;
-    let currentTicket = null;
-
-    async function fetchStatus(ticket) {
-        try {
-            loading.classList.remove('hidden');
-            errorBox.classList.add('hidden');
-            empty.classList.add('hidden');
-            card.classList.add('hidden');
-
-            const res = await fetch(`/consulta/status/${encodeURIComponent(ticket)}/json`, {
-                headers: { 'Accept': 'application/json' }
-            });
-            loading.classList.add('hidden');
-
-            if (res.status === 404) {
-                empty.classList.remove('hidden');
-                card.classList.add('hidden');
-                return;
-            }
-            if (!res.ok) {
-                errorBox.classList.remove('hidden');
-                return;
-            }
-            const data = await res.json();
-            if (!data.found) {
-                empty.classList.remove('hidden');
-                card.classList.add('hidden');
-                return;
-            }
-
-            // Rellenar datos
-            resTicket.textContent = data.ticket_number || ticket;
-            resCustomer.textContent = data.customer_name || '';
-            resType.textContent = (data.equipment && data.equipment.type) || '';
-            resBrand.textContent = (data.equipment && data.equipment.brand) || '';
-            resModel.textContent = (data.equipment && data.equipment.model) || '';
-            resSerial.textContent = (data.equipment && data.equipment.serial_number) || '';
-            resUpdatedAt.textContent = data.status_updated_at ? new Date(data.status_updated_at).toLocaleString('es-MX') : '';
-
-            const s = statusStyles[data.status] || { bg: 'bg-gray-400', text: 'Desconocido' };
-            resBadge.className = `inline-flex items-center px-3 py-1 rounded-lg text-white text-sm ${s.bg}`;
-            resBadge.textContent = s.text;
-
-            empty.classList.add('hidden');
-            card.classList.remove('hidden');
-            resultWrap.classList.remove('hidden');
-        } catch (e) {
-            loading.classList.add('hidden');
-            errorBox.classList.remove('hidden');
-        }
-    }
-
-    function stopPolling() {
-        if (pollingId) {
-            clearInterval(pollingId);
-            pollingId = null;
-        }
-    }
-
-    function setupRefreshButton() {
-        const refreshBtn = document.getElementById('refreshBtn');
-        if (refreshBtn) {
-            refreshBtn.addEventListener('click', function() {
-                if (currentTicket) {
-                    fetchStatus(currentTicket);
-                }
-            });
-        }
-    }
-
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const ticket = document.getElementById('ticketNumber').value.trim();
-        if (!ticket) return;
-        currentTicket = ticket;
-        resultWrap.classList.remove('hidden');
-        fetchStatus(ticket);
-        stopPolling(); // Asegurar que no hay polling automático
-        setupRefreshButton(); // Configurar botón manual
-    });
-})();
 
 // Form handling for contact form
 document.querySelector('#contact form').addEventListener('submit', function(e) {
