@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Laravel Cloud Initialization Script
-# This script initializes the Laravel application for Laravel Cloud
-
 echo "🚀 Initializing Laravel Cloud deployment..."
 
 # Set working directory
@@ -13,15 +10,9 @@ echo "📝 Setting up environment configuration..."
 if [ -f "laravel-cloud-env.txt" ]; then
     cp laravel-cloud-env.txt .env
     echo "✅ Environment file copied from laravel-cloud-env.txt"
-elif [ -f "laravel-cloud.env" ]; then
-    cp laravel-cloud.env .env
-    echo "✅ Environment file copied from laravel-cloud.env"
 else
     echo "⚠️ No environment file found, using default"
 fi
-
-# Database connection will be handled by PostgreSQL
-echo "🗄️ Using PostgreSQL database from Laravel Cloud..."
 
 # Generate application key
 echo "🔑 Generating application key..."
@@ -31,23 +22,6 @@ php artisan key:generate --force
 echo "🔐 Setting file permissions..."
 chmod -R 755 storage bootstrap/cache
 chmod -R 755 public
-chmod -R 755 /var/www/html
-
-# Ensure public directory exists and is accessible
-echo "📁 Ensuring public directory structure..."
-mkdir -p /var/www/html/public
-touch /var/www/html/public/index.php
-chmod 644 /var/www/html/public/index.php
-chmod 755 /var/www/html/public
-
-# Ensure .htaccess exists and is readable
-echo "🔧 Ensuring .htaccess configuration..."
-if [ -f "/var/www/html/public/.htaccess" ]; then
-    chmod 644 /var/www/html/public/.htaccess
-    echo "✅ .htaccess file permissions set"
-else
-    echo "⚠️ .htaccess file not found!"
-fi
 
 # Install Composer dependencies
 echo "📦 Installing Composer dependencies..."
@@ -76,4 +50,3 @@ echo "🌱 Running database seeders..."
 php artisan db:seed --force
 
 echo "✅ Laravel Cloud initialization completed successfully!"
-echo "🌐 Application should be accessible at: https://tycomsys-modernizado-main-xaiitl.laravel.cloud"

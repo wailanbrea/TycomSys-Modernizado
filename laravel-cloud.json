@@ -1,10 +1,11 @@
 {
   "name": "ticomsys-modernizado",
   "description": "TICOMSYS - Sistema de Gestión de Reparaciones",
-  "document_root": "public",
-  "web_server": "apache",
-  "php_version": "8.2",
-  "buildpack": "heroku/php",
+  "runtime": {
+    "php_version": "8.2",
+    "web_server": "nginx",
+    "document_root": "public"
+  },
   "environment": {
     "APP_NAME": "Ticomsys-Modernizado",
     "APP_ENV": "production",
@@ -37,11 +38,6 @@
     "MAIL_FROM_ADDRESS": "hello@example.com",
     "MAIL_FROM_NAME": "TICOMSYS"
   },
-  "buildpacks": [
-    {
-      "url": "https://github.com/heroku/heroku-buildpack-php"
-    }
-  ],
   "scripts": {
     "postdeploy": [
       "php artisan migrate --force",
