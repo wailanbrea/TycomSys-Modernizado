@@ -1,0 +1,80 @@
+{
+  "name": "ticomsys-modernizado",
+  "description": "TICOMSYS - Sistema de Gestión de Reparaciones",
+  "version": "1.0.0",
+  "runtime": {
+    "php_version": "8.2",
+    "web_server": "nginx",
+    "document_root": "public",
+    "entry_point": "index.php"
+  },
+  "deployment": {
+    "source_directory": ".",
+    "public_directory": "public",
+    "index_file": "public/index.php",
+    "buildpack": "heroku/php"
+  },
+  "nginx_config": {
+    "server": {
+      "listen": "80",
+      "server_name": "_",
+      "root": "/var/www/html/public",
+      "index": ["index.php", "index.html"],
+      "location": {
+        "/": {
+          "try_files": "$uri $uri/ /index.php?$query_string"
+        },
+        "~ \\.php$": {
+          "include": "fastcgi_params",
+          "fastcgi_pass": "unix:/run/php/php8.2-fpm.sock",
+          "fastcgi_param": {
+            "SCRIPT_FILENAME": "$realpath_root$fastcgi_script_name",
+            "DOCUMENT_ROOT": "$realpath_root"
+          }
+        }
+      }
+    }
+  },
+  "environment": {
+    "APP_NAME": "Ticomsys-Modernizado",
+    "APP_ENV": "production",
+    "APP_KEY": "base64:PfJiwGJ8YDmxKK8nE1H9JKTvOBJ0tkdwk3C027quLQw=",
+    "APP_DEBUG": "false",
+    "APP_URL": "https://ticomsys-modernizado-main-oawkq1.laravel.cloud",
+    "LOG_CHANNEL": "laravel-cloud-socket",
+    "LOG_STDERR_FORMATTER": "Monolog\\Formatter\\JsonFormatter",
+    "DB_CONNECTION": "pgsql",
+    "DB_HOST": "ep-crimson-bird-a46hyy47.aws-us-east-1.pg.laravel.cloud",
+    "DB_PORT": "5432",
+    "DB_DATABASE": "main",
+    "DB_USERNAME": "laravel",
+    "DB_PASSWORD": "npg_DWalwCmzK7t5",
+    "LOG_LEVEL": "debug",
+    "SESSION_DRIVER": "cookie",
+    "CACHE_STORE": "database",
+    "SCHEDULE_CACHE_DRIVER": "database",
+    "VITE_APP_NAME": "Ticomsys-Modernizado",
+    "QUEUE_CONNECTION": "sync",
+    "FILESYSTEM_DISK": "local",
+    "BROADCAST_DRIVER": "log",
+    "SESSION_LIFETIME": "120",
+    "MAIL_MAILER": "smtp",
+    "MAIL_HOST": "mailpit",
+    "MAIL_PORT": "1025",
+    "MAIL_USERNAME": "null",
+    "MAIL_PASSWORD": "null",
+    "MAIL_ENCRYPTION": "null",
+    "MAIL_FROM_ADDRESS": "hello@example.com",
+    "MAIL_FROM_NAME": "TICOMSYS"
+  },
+  "scripts": {
+    "postdeploy": [
+      "composer install --optimize-autoloader --no-dev",
+      "php artisan config:cache",
+      "php artisan route:cache",
+      "php artisan view:cache",
+      "php artisan migrate --force",
+      "php artisan db:seed --force"
+    ]
+  }
+}

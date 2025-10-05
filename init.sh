@@ -49,6 +49,10 @@ else
     echo "⚠️ .htaccess file not found!"
 fi
 
+# Install Composer dependencies
+echo "📦 Installing Composer dependencies..."
+composer install --optimize-autoloader --no-dev
+
 # Build frontend assets
 echo "🎨 Building frontend assets..."
 cd /var/www/html/frontend
