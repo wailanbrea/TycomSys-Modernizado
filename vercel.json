@@ -4,8 +4,8 @@
   "buildCommand": "npm run build",
   "outputDirectory": "build",
   "env": {
-    "REACT_APP_API_URL": "https://tu-backend.railway.app/api",
-    "REACT_APP_BASE_URL": "https://tu-backend.railway.app",
+    "REACT_APP_API_URL": "https://ticomsys-backend.onrender.com/api",
+    "REACT_APP_BASE_URL": "https://ticomsys-backend.onrender.com",
     "REACT_APP_ENV": "production"
   },
   "routes": [
