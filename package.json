@@ -4,6 +4,7 @@
   "description": "TICOMSYS - Sistema de Gestión de Reparaciones",
   "scripts": {
     "build": "cd frontend && npm install && npm run build",
+    "vercel-build": "cd frontend && npm install && npm run build",
     "dev": "cd frontend && npm install && npm start"
   },
   "engines": {
