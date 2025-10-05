@@ -22,8 +22,7 @@
   "bugs": {
     "url": "https://github.com/creativetimofficial/argon-dashboard-react/issues"
   },
-  "homepage": "https://ticomsys-moder.vercel.app",
-  "proxy": "http://localhost:8000",
+  "homepage": "https://ticomsys-complete.onrender.com",
   "scripts": {
     "start": "react-scripts start",
     "build": "cross-env PUBLIC_URL=/ react-scripts build",

@@ -153,6 +153,10 @@ Route::prefix('api')->group(function () {
 // Ruta principal para la página moderna de TICOMSYS
 Route::get('/', [TicomsysController::class, 'index'])->name('home');
 
+// Rutas para servir el frontend React desde Render
+Route::get('/admin/{any}', [ReactController::class, 'index'])->where('any', '.*');
+Route::get('/admin', [ReactController::class, 'index']);
+
 // Rutas para consulta de clientes (sin autenticación)
 Route::prefix('consulta')->group(function () {
     Route::get('/', [CustomerQueryController::class, 'index'])->name('customer.query');
