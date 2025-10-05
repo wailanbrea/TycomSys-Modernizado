@@ -2,25 +2,5 @@
   "version": 2,
   "name": "ticomsys-moder",
   "buildCommand": "npm run build",
-  "outputDirectory": "build",
-  "routes": [
-    {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
-      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot))",
-      "dest": "/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
-  "env": {
-    "APP_ENV": "production",
-    "APP_DEBUG": "false",
-    "APP_URL": "https://ticomsys-moder.vercel.app",
-    "REACT_APP_API_URL": "https://ticomsys-moder.vercel.app/api"
-  }
+  "outputDirectory": "build"
 }
