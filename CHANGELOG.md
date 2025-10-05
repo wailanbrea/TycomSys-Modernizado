@@ -1,90 +1,199 @@
-# Release Notes
+# Change Log
 
-## [Unreleased](https://github.com/laravel/laravel/compare/v12.4.0...12.x)
+## [1.2.4] 2024-01-01
 
-## [v12.4.0](https://github.com/laravel/laravel/compare/v12.3.1...v12.4.0) - 2025-08-29
+- Update dependencies
 
-* [12.x] Add default Redis retry configuration by [@mateusjatenee](https://github.com/mateusjatenee) in https://github.com/laravel/laravel/pull/6666
+## [1.2.3] 2023-05-23
 
-## [v12.3.1](https://github.com/laravel/laravel/compare/v12.3.0...v12.3.1) - 2025-08-21
+- Update dependencies
+- Fix issues
 
-* [12.x] Bump Pint version by [@AhmedAlaa4611](https://github.com/AhmedAlaa4611) in https://github.com/laravel/laravel/pull/6653
-* [12.x] Making sure all related processed are closed when terminating the currently command by [@AhmedAlaa4611](https://github.com/AhmedAlaa4611) in https://github.com/laravel/laravel/pull/6654
-* [12.x] Use application name from configuration by [@AhmedAlaa4611](https://github.com/AhmedAlaa4611) in https://github.com/laravel/laravel/pull/6655
-* Bring back postAutoloadDump script by [@jasonvarga](https://github.com/jasonvarga) in https://github.com/laravel/laravel/pull/6662
+## [1.2.2] 2022-08-26
 
-## [v12.3.0](https://github.com/laravel/laravel/compare/v12.2.0...v12.3.0) - 2025-08-03
+- Update the dependencies
+- Migration to React 18
+- Migration to sass from node-sass
 
-* Fix Critical Security Vulnerability in form-data Dependency by [@izzygld](https://github.com/izzygld) in https://github.com/laravel/laravel/pull/6645
-* Revert "fix" by [@RobertBoes](https://github.com/RobertBoes) in https://github.com/laravel/laravel/pull/6646
-* Change composer post-autoload-dump script to Artisan command by [@lmjhs](https://github.com/lmjhs) in https://github.com/laravel/laravel/pull/6647
+## [1.2.1] 2021-07-13
 
-## [v12.2.0](https://github.com/laravel/laravel/compare/v12.1.0...v12.2.0) - 2025-07-11
+### Bug fixing
 
-* Add Vite 7 support by [@timacdonald](https://github.com/timacdonald) in https://github.com/laravel/laravel/pull/6639
+### Major style changes
 
-## [v12.1.0](https://github.com/laravel/laravel/compare/v12.0.11...v12.1.0) - 2025-07-03
+### Deleted components
 
-* [12.x] Disable nightwatch in testing by [@laserhybiz](https://github.com/laserhybiz) in https://github.com/laravel/laravel/pull/6632
-* [12.x] Reorder environment variables in phpunit.xml for logical grouping by [@AhmedAlaa4611](https://github.com/AhmedAlaa4611) in https://github.com/laravel/laravel/pull/6634
-* Change to hyphenate prefixes and cookie names by [@u01jmg3](https://github.com/u01jmg3) in https://github.com/laravel/laravel/pull/6636
-* [12.x] Fix type casting for environment variables in config files by [@AhmedAlaa4611](https://github.com/AhmedAlaa4611) in https://github.com/laravel/laravel/pull/6637
+### Added components
 
-## [v12.0.11](https://github.com/laravel/laravel/compare/v12.0.10...v12.0.11) - 2025-06-10
+### Deleted dependencies
 
-**Full Changelog**: https://github.com/laravel/laravel/compare/v12.0.10...v12.0.11
+### Added dependencies
 
-## [v12.0.10](https://github.com/laravel/laravel/compare/v12.0.9...v12.0.10) - 2025-06-09
+### Updated dependencies
 
-* fix alphabetical order by [@Khuthaily](https://github.com/Khuthaily) in https://github.com/laravel/laravel/pull/6627
-* [12.x] Reduce redundancy and keeps the .gitignore file cleaner by [@AhmedAlaa4611](https://github.com/AhmedAlaa4611) in https://github.com/laravel/laravel/pull/6629
-* [12.x] Fix: Add void return type to satisfy Rector analysis by [@Aluisio-Pires](https://github.com/Aluisio-Pires) in https://github.com/laravel/laravel/pull/6628
+```
+@fortawesome/fontawesome-free   5.15.2   →   5.15.3
+  classnames                       2.2.6   →    2.3.1
+  node-sass                       4.14.1   →    6.0.1
+  nouislider                      14.6.3   →   15.2.0
+  react                           17.0.1   →   17.0.2
+  react-dom                       17.0.1   →   17.0.2
+  react-scripts                    4.0.1   →    4.0.3
+  gulp-append-prepend              1.0.8   →    1.0.9
+  eslint-plugin-flowtype           5.2.0   →    5.8.0
+  jquery                           3.5.1   →    3.6.0
+  typescript                       4.1.3   →    4.3.5
+```
 
-## [v12.0.9](https://github.com/laravel/laravel/compare/v12.0.8...v12.0.9) - 2025-05-26
+### Warning
 
-* [12.x] Remove apc by [@AhmedAlaa4611](https://github.com/AhmedAlaa4611) in https://github.com/laravel/laravel/pull/6611
-* [12.x] Add JSON Schema to package.json by [@martinbean](https://github.com/martinbean) in https://github.com/laravel/laravel/pull/6613
-* Minor language update by [@woganmay](https://github.com/woganmay) in https://github.com/laravel/laravel/pull/6615
-* Enhance .gitignore to exclude common OS and log files by [@mohammadRezaei1380](https://github.com/mohammadRezaei1380) in https://github.com/laravel/laravel/pull/6619
+**The TypeScript dependencies are installed only to stop console warnings on install. They are not actually used in our product. So the product is not on TypeScript!**
+_The following warnings will appear when running the installation command, but they do not affect the UI or the functionality of the product (they will be solved in our next update):_
 
-## [v12.0.8](https://github.com/laravel/laravel/compare/v12.0.7...v12.0.8) - 2025-05-12
+```
+npm WARN react-datetime@3.0.4 requires a peer of react@^16.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining@7.14.5 requires a peer of @babel/core@^7.13.0 but none is installed. You must install peer dependencies yourself.
+```
 
-* [12.x] Clean up URL formatting in README by [@AhmedAlaa4611](https://github.com/AhmedAlaa4611) in https://github.com/laravel/laravel/pull/6601
+_If they will persist in our 2.*.* version, we will drop their usages and replace them with other plugins._
+_In development mode, some of the above plugins will throw a warning because they still use React v16 syntax. If the error will persist in our 2.*.* version, we will drop their usage and replace them with other plugins._
 
-## [v12.0.7](https://github.com/laravel/laravel/compare/v12.0.6...v12.0.7) - 2025-04-15
+**Note:** There are 11 vulnerabilities when running the `npm install` command, to fix it just run the following command `npm audit fix` once the installation is finished.
 
-* Add `composer run test` command by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/laravel/pull/6598
-* Partner Directory Changes in ReadME by [@joshcirre](https://github.com/joshcirre) in https://github.com/laravel/laravel/pull/6599
+## [1.2.0] 2021-01-26
 
-## [v12.0.6](https://github.com/laravel/laravel/compare/v12.0.5...v12.0.6) - 2025-04-08
+### Bug fixing
 
-**Full Changelog**: https://github.com/laravel/laravel/compare/v12.0.5...v12.0.6
+- https://github.com/creativetimofficial/argon-dashboard-react/pull/38
+- https://github.com/creativetimofficial/argon-dashboard-react/pull/33
+- https://github.com/creativetimofficial/argon-dashboard-react/issues/29
+- https://github.com/creativetimofficial/argon-dashboard-react/issues/23
 
-## [v12.0.5](https://github.com/laravel/laravel/compare/v12.0.4...v12.0.5) - 2025-04-02
+### Major style changes
 
-* [12.x] Update `config/mail.php` to match the latest core configuration by [@AhmedAlaa4611](https://github.com/AhmedAlaa4611) in https://github.com/laravel/laravel/pull/6594
+- Moved all `src/scss/argon-dashboard/bootstrap` files to `node_modules/bootstrap`
 
-## [v12.0.4](https://github.com/laravel/laravel/compare/v12.0.3...v12.0.4) - 2025-03-31
+### Deleted components
 
-* Bump vite from 6.0.11 to 6.2.3 - Vulnerability patch by [@abdel-aouby](https://github.com/abdel-aouby) in https://github.com/laravel/laravel/pull/6586
-* Bump vite from 6.2.3 to 6.2.4 by [@thinkverse](https://github.com/thinkverse) in https://github.com/laravel/laravel/pull/6590
+### Added components
 
-## [v12.0.3](https://github.com/laravel/laravel/compare/v12.0.2...v12.0.3) - 2025-03-17
+### Deleted dependencies
 
-* Remove reverted change from CHANGELOG.md by [@AJenbo](https://github.com/AJenbo) in https://github.com/laravel/laravel/pull/6565
-* Improves clarity in app.css file by [@AhmedAlaa4611](https://github.com/AhmedAlaa4611) in https://github.com/laravel/laravel/pull/6569
-* [12.x] Refactor: Structural improvement for clarity by [@AhmedAlaa4611](https://github.com/AhmedAlaa4611) in https://github.com/laravel/laravel/pull/6574
-* Bump axios from 1.7.9 to 1.8.2 - Vulnerability patch by [@abdel-aouby](https://github.com/abdel-aouby) in https://github.com/laravel/laravel/pull/6572
-* [12.x] Remove Unnecessarily [@source](https://github.com/source) by [@AhmedAlaa4611](https://github.com/AhmedAlaa4611) in https://github.com/laravel/laravel/pull/6584
+- @types/googlemaps (we'll use simple Google Maps API with Vanilla JS instead)
+- @types/markerclustererplus (we'll use simple Google Maps API with Vanilla JS instead)
+- @types/react (we'll use simple Google Maps API with Vanilla JS instead)
+- react-google-maps (we'll use simple Google Maps API with Vanilla JS instead)
 
-## [v12.0.2](https://github.com/laravel/laravel/compare/v12.0.1...v12.0.2) - 2025-03-04
+### Added dependencies
 
-* Make the github test action run out of the box independent of the choice of testing framework by [@ndeblauw](https://github.com/ndeblauw) in https://github.com/laravel/laravel/pull/6555
+- bootstrap@4.6.0 (so that we can easily update bootstrap version)
+- jquery@3.5.1 (since bootstrap requires it - we are not using, we are only using bootstrap scss)
+- node-sass-package-importer@5.3.2 (so that we can import bootstrap scss from `node_modules`)
 
-## [v12.0.1](https://github.com/laravel/laravel/compare/v12.0.0...v12.0.1) - 2025-02-24
+### Updated dependencies
 
-* [12.x] prefer stable stability by [@pataar](https://github.com/pataar) in https://github.com/laravel/laravel/pull/6548
+```
+@fortawesome/fontawesome-free    5.12.1   →   5.15.2
+chart.js                          2.9.3   →    2.9.4
+moment                           2.24.0   →   2.29.1
+node-sass                        4.13.1   →   4.14.1
+nouislider                       14.1.1   →   14.6.3
+react                           16.12.0   →   17.0.1
+react-chartjs-2                   2.9.0   →   2.11.1
+react-copy-to-clipboard           5.0.2   →    5.0.3
+react-datetime                   2.16.3   →    3.0.4
+react-dom                       16.12.0   →   17.0.1
+react-router-dom                  5.1.2   →    5.2.0
+react-scripts                    ^3.4.0   →    4.0.1
+reactstrap                        8.4.1   →    8.9.0
+eslint-plugin-flowtype           3.13.0   →    5.2.0
+typescript                        3.7.5   →    4.1.3
+```
 
-## [v12.0.0 (2025-??-??)](https://github.com/laravel/laravel/compare/v11.0.2...v12.0.0)
+### Warning
 
-Laravel 12 includes a variety of changes to the application skeleton. Please consult the diff to see what's new.
+**The TypeScript and jQuery dependencies are installed only to stop console warnings on install. They are not actually used in our product. So the product is not based on TypeScript or jQuery!**
+_The following warnings will appear when running the installation command, but they do not affect the UI or the functionality of the product (they will be solved in our next update):_
+
+```
+npm WARN react-datetime@3.0.4 requires a peer of react@^16.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN react-popper@1.3.7 requires a peer of react@0.14.x || ^15.0.0 || ^16.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN create-react-context@0.3.0 requires a peer of react@^0.14.0 || ^15.0.0 || ^16.0.0 but none is installed. You must install peer dependencies yourself.
+```
+
+_If they will persist in our 2.*.* version, we will drop their usages and replace them with other plugins._
+_In development mode, some of the above plugins will throw a warning because they still use React v16 syntax. If the error will persist in our 2.*.* version, we will drop their usage and replace them with other plugins._
+
+## [1.1.0] 2020-02-10
+
+### Bug fixing
+
+- https://github.com/creativetimofficial/argon-dashboard-react/issues/18 (Added this in live docs, we need for our product to have a homepage prop inside the package.json. If build is not working, just delete the homepage prop from inside the package.json, or configure it to your own specs.)
+- https://github.com/creativetimofficial/argon-dashboard-react/issues/17
+- https://github.com/creativetimofficial/argon-dashboard-react/issues/15
+- https://github.com/creativetimofficial/argon-dashboard-react/issues/12
+- https://github.com/creativetimofficial/argon-dashboard-react/issues/3
+- Changed `componentWillMount` with `constructor` function inside `src/views/Index.js` (this was for initializing the charts)
+
+### Major style changes
+
+- Changed the whole `src/assets/scss/*` folder
+- Changed the whole `src/assets/css/*` folder
+
+### Deleted components
+
+### Added components
+
+### Deleted dependencies
+
+### Added dependencies
+
+- eslint-plugin-flowtype@3.13.0 (To stop following Warning: `npm **WARN** eslint-config-react-app@5.2.0 requires a peer of eslint-plugin-flowtype@3.x but none is installed. You must install peer dependencies yourself.`)
+- @fortawesome/fontawesome-free@5.12.1 (Easier to maintain as a dependency, rather than having to download new versions)
+- gulp@4.0.2 (For licenses copyrights)
+- gulp-append-prepend@1.0.8 (For licenses copyrights)
+
+### Updated dependencies
+
+```
+chart.js                     2.7.3   →     2.9.3
+node-sass                   4.11.0   →    4.13.1
+nouislider                  13.1.1   →    14.1.1
+react                       16.8.4   →   16.12.0
+react-chartjs-2              2.7.4   →     2.9.0
+react-copy-to-clipboard      5.0.1   →     5.0.2
+react-dom                   16.8.4   →   16.12.0
+react-router-dom             4.3.1   →     5.1.2
+react-scripts                2.1.8   →     3.3.1
+reactstrap                   7.1.0   →     8.4.1
+@types/googlemaps          3.30.18   →    3.39.2
+@types/react                16.8.7   →   16.9.19
+typescript                3.3.3333   →     3.7.5
+```
+
+### Warning
+
+** The following warnings could not be solved, due to some of our dependencies, however, they do not affect the functionality or the UI of the product: **
+
+```
+npm WARN deprecated core-js@2.6.11: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
+npm WARN deprecated popper.js@1.16.1: Popper changed home, find its new releases at @popperjs/core
+```
+
+** The following warning could not be solved due to the usage of `react-google-maps` (Note: if the warning will persist after React changes version to 17, we'll drop the support for `react-google-maps` and replace them with other react library for maps):**
+
+```
+backend.js:6 Warning: componentWillMount has been renamed, and is not recommended for use. See https://fb.me/react-unsafe-component-lifecycles for details.
+
+* Move code with side effects to componentDidMount, and set initial state in the constructor.
+* Rename componentWillMount to UNSAFE_componentWillMount to suppress this warning in non-strict mode. In React 17.x, only the UNSAFE_ name will work. To rename all deprecated lifecycles to their new names, you can run `npx react-codemod rename-unsafe-lifecycles` in your project source folder.
+
+Please update the following components: withScriptjs(withGoogleMap(Component))
+```
+
+## [1.0.0] 2019-03-13
+
+### Original Release
+
+- Added Reactstrap as base framework
+- Added design from Argon Dashboard by Creative Tim
