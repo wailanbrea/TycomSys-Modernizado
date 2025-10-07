@@ -102,3 +102,4 @@ php artisan view:clear
 3. Probar login
 4. Si funciona, cambiar APP_DEBUG=false
 5. Hacer commit final
+

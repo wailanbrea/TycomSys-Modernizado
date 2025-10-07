@@ -13,6 +13,7 @@ use App\Http\Controllers\ReportController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\SystemConfigController;
 use App\Http\Controllers\CustomerQueryController;
+use App\Http\Controllers\CustomerController;
 
 // API routes para Laravel
 Route::prefix('api')->group(function () {
@@ -127,6 +128,16 @@ Route::prefix('api')->group(function () {
             Route::get('/inventory/for-repair', [InventoryController::class, 'getItemsForRepair']);
         });
         
+        // API de clientes
+        Route::middleware(['auth'])->group(function () {
+            Route::apiResource('customers', CustomerController::class);
+            Route::get('/customers/{id}/history', [CustomerController::class, 'history']);
+            Route::get('/customers/{id}/statistics', [CustomerController::class, 'statistics']);
+            Route::post('/customers/{id}/toggle-status', [CustomerController::class, 'toggleStatus']);
+            Route::get('/customers-active', [CustomerController::class, 'getActiveCustomers']);
+            Route::get('/customers-search', [CustomerController::class, 'search']);
+        });
+        
         // API de configuración del sistema
         Route::middleware(['auth', 'role:admin'])->group(function () {
             Route::get('/system-config', [SystemConfigController::class, 'index']);
@@ -198,6 +209,8 @@ Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/tickets', [ReactController::class, 'index'])->middleware('permission:manage_tickets')->name('admin.tickets');
     Route::get('/invoices', [ReactController::class, 'index'])->middleware('permission:manage_invoices')->name('admin.invoices');
     Route::get('/invoice-view', [ReactController::class, 'index'])->middleware('permission:view_invoices')->name('admin.invoice-view');
+    Route::get('/customers', [ReactController::class, 'index'])->middleware('permission:manage_equipment')->name('admin.customers');
+    Route::get('/customer-history/{id}', [ReactController::class, 'index'])->middleware('permission:view_invoices')->name('admin.customer-history');
         Route::get('/reports', [ReactController::class, 'index'])->middleware('permission:view_reports')->name('admin.reports');
         Route::get('/reports-advanced', [ReactController::class, 'index'])->middleware('permission:view_reports')->name('admin.reports-advanced');
     Route::get('/{any}', [ReactController::class, 'index'])->where('any', '.*');
@@ -210,6 +223,8 @@ Route::prefix('tecnico')->middleware(['auth', 'role:tecnico'])->group(function (
     Route::get('/tickets', [ReactController::class, 'index'])->middleware('permission:manage_tickets')->name('tecnico.tickets');
     Route::get('/invoices', [ReactController::class, 'index'])->middleware('permission:manage_invoices')->name('tecnico.invoices');
     Route::get('/invoice-view', [ReactController::class, 'index'])->middleware('permission:view_invoices')->name('tecnico.invoice-view');
+    Route::get('/customers', [ReactController::class, 'index'])->middleware('permission:manage_equipment')->name('tecnico.customers');
+    Route::get('/customer-history/{id}', [ReactController::class, 'index'])->middleware('permission:view_invoices')->name('tecnico.customer-history');
         Route::get('/reports', [ReactController::class, 'index'])->middleware('permission:view_reports')->name('tecnico.reports');
         Route::get('/reports-advanced', [ReactController::class, 'index'])->middleware('permission:view_reports')->name('tecnico.reports-advanced');
     Route::get('/{any}', [ReactController::class, 'index'])->where('any', '.*');

@@ -15,6 +15,7 @@ class Invoice extends Model
         'invoice_number',
         'repair_equipment_id',
         'ticket_id',
+        'customer_id',
         'customer_name',
         'customer_phone',
         'customer_email',
@@ -47,6 +48,14 @@ class Invoice extends Model
         'discount_amount' => 'decimal:2',
         'total_amount' => 'decimal:2'
     ];
+
+    /**
+     * Relación con el cliente
+     */
+    public function customer(): BelongsTo
+    {
+        return $this->belongsTo(Customer::class);
+    }
 
     /**
      * Relación con el equipo de reparación

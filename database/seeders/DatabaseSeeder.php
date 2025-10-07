@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             SystemSettingsSeeder::class,
             EquipmentDataSeeder::class,
             TechnicianSeeder::class,
+            CustomerSeeder::class,
             RepairEquipmentSeeder::class,
             InvoiceSeeder::class,
             InventorySeeder::class,

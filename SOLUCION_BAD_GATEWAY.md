@@ -131,3 +131,4 @@ Opciones:
 3. Si sigue caído, revisa logs en Render
 4. Si hay error específico, lo solucionamos
 
+

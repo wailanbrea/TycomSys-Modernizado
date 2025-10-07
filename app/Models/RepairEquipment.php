@@ -10,6 +10,7 @@ class RepairEquipment extends Model
 {
     protected $fillable = [
         'ticket_number',
+        'customer_id',
         'customer_name',
         'customer_phone',
         'customer_email',
@@ -39,6 +40,11 @@ class RepairEquipment extends Model
     ];
 
         // Relaciones
+        public function customer(): BelongsTo
+        {
+            return $this->belongsTo(Customer::class);
+        }
+
         public function assignedTechnician(): BelongsTo
         {
             return $this->belongsTo(User::class, 'assigned_technician_id');
