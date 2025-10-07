@@ -2,8 +2,18 @@ services:
   - type: web
     name: ticomsys-moder-1
     env: php
-    buildCommand: bash render-build.sh
-    startCommand: bash render-start.sh
+    runtime: php
+    buildCommand: |
+      composer install --no-dev --optimize-autoloader --no-interaction
+      php artisan key:generate --force
+      mkdir -p storage/framework/{sessions,views,cache}
+      mkdir -p storage/logs
+      mkdir -p bootstrap/cache
+      chmod -R 775 storage bootstrap/cache
+      php artisan migrate --force
+      php artisan db:seed --force
+      cd frontend && npm install && npm run build
+    startCommand: php artisan serve --host=0.0.0.0 --port=$PORT
     healthCheckPath: /api/health
     envVars:
       - key: APP_ENV
