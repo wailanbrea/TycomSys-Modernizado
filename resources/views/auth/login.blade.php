@@ -37,7 +37,7 @@
 <div class="w-full max-w-md p-8 space-y-8 bg-white rounded-xl shadow-lg">
 <div class="text-center">
 <div class="flex items-center justify-center gap-2 text-primary mb-4">
-<img src="{{ asset('images/logoticomsys.png') }}" alt="TicomSys Logo" class="h-16 w-auto">
+<img src="{{ secure_asset('images/logoticomsys.png') }}" alt="TicomSys Logo" class="h-16 w-auto">
 </div>
 </div>
 <form action="{{ route('login') }}" class="mt-8 space-y-6" method="POST">
